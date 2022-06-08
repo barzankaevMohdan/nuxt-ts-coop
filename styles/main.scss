@@ -1,0 +1,83 @@
+@import './variables/variables.scss';
+
+* {
+  &,
+  &::after,
+  &::before {
+    box-sizing: border-box;
+    outline: none;
+  }
+}
+
+html,
+body {
+  font-family: 'Source Code Pro', 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  flex: 1 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: var(--dark-2);
+  scrollbar-color: transparent;
+  scrollbar-width: var(--main-scrollbar-width);
+}
+
+::-webkit-scrollbar {
+  width: var(--main-scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: var(--main-scrollbar-thumb-borderradius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color);;
+}
+
+a {
+  color: var(--main-color);
+}
+
+.swiper-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+}
+
+.main,
+#__nuxt,
+#__layout {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
