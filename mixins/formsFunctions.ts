@@ -1,6 +1,6 @@
 import validation from './validation'
 import Vue from 'vue'
-import { DataType, Messages } from '~/ts/interfaces'
+import { DataType, Messages } from '~/types/interfaces'
 import { LoaderOptionsPlugin } from 'webpack'
 
 
