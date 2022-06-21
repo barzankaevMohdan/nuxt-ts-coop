@@ -1,31 +1,35 @@
 <template lang='pug'>
+ UiModal(
+      name='user-registration'
+      @beforeOpen='initData'
+    )
   form.reg-form(
-    @submit.prevent='submit'
-  )
+      @submit.prevent='submit'
+    )
     UiInput(
-      v-model.trim='data.name'
-      :error='errors["name"]'
-      placeholder="Имя"
-    )
+        v-model.trim='data.name'
+        :error='errors["name"]'
+        placeholder="Имя"
+      )
 
     UiInput.reg-form__field(
-      v-model.trim='data.last_name'
-      :error='errors["last_name"]'
-      placeholder='Фамилия'
-    )
+        v-model.trim='data.last_name'
+        :error='errors["last_name"]'
+        placeholder='Фамилия'
+      )
 
     UiInput.reg-form__field(
-      v-model.trim='data.login'
-      :error='errors["login"]'
-      placeholder='Ваш e-mail'
-    )
+        v-model.trim='data.login'
+        :error='errors["login"]'
+        placeholder='Ваш e-mail'
+      )
 
     UiInput.reg-form__field(
-      v-model.trim='data.password'
-      :error='errors["password"]'
-      :type='typeOfPasswordInput'
-      placeholder="Пароль"
-    )
+        v-model.trim='data.password'
+        :error='errors["password"]'
+        :type='typeOfPasswordInput'
+        placeholder="Пароль"
+      )
       template(#btn)
         button.reg-form__button-eye(
           @click.prevent="showPassword"
@@ -57,7 +61,7 @@ import Vue from 'vue'
 import formsFunctions from '~/mixins/formsFunctions'
 
 export default Vue.extend({
-  name: 'RegistrationForm',
+  name: 'RegistrationModal',
   mixins: [formsFunctions],
   data() {
     return {
@@ -107,40 +111,7 @@ export default Vue.extend({
 })
 </script>
 
-<style  lang='scss'>
+<style lang='scss' scoped>
 @import "~/styles/mixins.scss";
 
-.reg-form {
-  &__field {
-    margin-top: 20px;
-  }
-
-  &__footer {
-    margin-top: 30px;
-  }
-
-  &__error {
-    display: block;
-    font-size: var(--main-input-label-size);
-    line-height: 1.4;
-    color: var(--main-danger-color);
-    margin: var(--main-input-label-offset-top) 0 0 var(--main-input-label-offset-left);
-  }
-
-  &__button-eye {
-    max-width: 26px;
-    max-height: 20px;
-    border: 0;
-    padding: 0;
-    background: transparent;
-    cursor: pointer;
-    outline: none;
-  }
-
-  &__eye-icon {
-    max-width: 26px;
-    max-height: 20px;
-    fill: var(--main-light);
-  }
-}
 </style>

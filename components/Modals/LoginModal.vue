@@ -1,7 +1,11 @@
 <template lang='pug'>
-  form.auth-form(
-    @submit.prevent='submit'
-  )
+ UiModal(
+      name='user-login'
+      @beforeOpen='initData'
+    )
+  form.reg-form(
+      @submit.prevent='submit'
+    )
     UiInput(
       v-model.trim='data.login'
       :error='errors["login"]'
@@ -43,6 +47,10 @@ export default Vue.extend({
   },
   mixins: [formsFunctions],
   methods: {
+    initData(event: any) {
+      console.log(event);
+      this.data.login = event.ref.params
+    },
     // login functions
     async componentHandler(): Promise<void> {
       const userData = {
@@ -76,7 +84,7 @@ export default Vue.extend({
 })
 </script>
 
-<style  lang='scss'>
+<style scoped lang='scss'>
 @import "~/styles/mixins.scss";
 
 .auth-form {

@@ -3,7 +3,13 @@
     name='error-login-exist'
     @beforeOpen='initData'
   )
-    
+    .login-exist
+     h2.login-exist__title Пользователь уже существует!
+     p.login-exist__subtitle Пользователь {{data.login}} уже существует
+     UiButton(
+        size='parent-width'
+        @click.prevent='goToLogin'
+      ) Войти
 </template>
 
 <script lang="ts">
@@ -23,7 +29,12 @@ export default Vue.extend({
   methods: {
     initData(event: any) {
       console.log(event);
+      this.data.login = event.ref.params
     },
+    goToLogin(): void {
+      this.$vfm.show('user-login', this.data.login)
+      this.$vfm.hide('error-login-exist')
+    }
   },
 })
 </script>
@@ -31,4 +42,17 @@ export default Vue.extend({
 <style lang='scss' scoped>
 @import "~/styles/mixins.scss";
 
+.login-exist {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: 25px;
+
+  }
+
+  &__subtitle {
+    font-size: 16px;
+  }
+}
 </style>
