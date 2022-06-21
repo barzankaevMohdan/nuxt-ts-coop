@@ -1,16 +1,13 @@
 import validation from './validation'
-import Vue from 'vue'
-import { DataType, Messages } from '~/types/interfaces'
-import { LoaderOptionsPlugin } from 'webpack'
+import mixins from 'vue-typed-mixins'
+import { DataType, Messages } from '~/validation/validation-interface'
 
-
-export default Vue.extend({
-  mixins: [validation],
+export default mixins(validation).extend({
   data() {
     return {
       data: {} as DataType,
       isLoading: false,
-      serverError: ''
+      serverError: '',
     }
   },
   methods: {
@@ -27,14 +24,13 @@ export default Vue.extend({
 
       try {
         await this.componentHandler()
-      } catch (error : any) {   // цхьа clutch бохш бид буьц поэтлму any
-        console.log(error);
+      } catch (error : any) {
 
         if (error.message) {
           try {
             this.errorHandler(error)
-          } catch (e : any) {     // цхьа clutch бохш бид буьц поэтлму any
-            console.log('base error catcher', e)
+          } catch (e : any) {
+            console.log('base error catcher')
             this.serverError = e.message
           }
           return
@@ -57,6 +53,7 @@ export default Vue.extend({
 
       if (['user not found'].includes(serverError.message)) {
         this.$vfm.show('error-user-not-found', this.data.login)
+        console.log(this.data);
         return
       }
 

@@ -1,6 +1,6 @@
 import Validator from  'validatorjs'
-import { ErrorHandler, GetValidation } from '~/types/interfaces'
-import {validationNames, validationRules } from '~/types/ValidationTypes'
+import { ErrorHandler, GetValidation } from '~/validation/validation-interface'
+import {AttributeNamesType, RulesTypes } from '~/validation/validation-types'
 import Vue from 'vue'
 
 
@@ -16,12 +16,10 @@ export default Vue.extend({
     validationFails(): boolean {
       const validation = this._getValidation()
       this.errors = {}
-      console.log(this._getValidation());
 
       if (validation.fails()) {
-        this.errors = Object.entries(validation.errors.errors).reduce((acc, [key, errors]: any ) => {    //тут any потому что не понял что там нужно
+        this.errors = Object.entries(validation.errors.errors).reduce((acc, [key, errors]: any ) => {
           acc[key] = errors[0]
-          console.log([key, errors]);
 
           return acc
         }, {} as ErrorHandler)
@@ -36,20 +34,16 @@ export default Vue.extend({
     _getValidation(): GetValidation {
       Validator.useLang('ru')
       const validator = new Validator(this.data, this.rules)
-      console.log(this.rules);
-
       validator.setAttributeNames(this.attributeNames)
-
-      console.log(validator);
       return validator
     },
   },
   computed: {
-    attributeNames(): validationNames {
-      return {} as validationNames
+    attributeNames(): AttributeNamesType {
+      return {} as AttributeNamesType
     },
-    rules(): validationRules {
-      return {} as validationRules
+    rules(): RulesTypes {
+      return {} as RulesTypes
     },
   },
   watch: {
