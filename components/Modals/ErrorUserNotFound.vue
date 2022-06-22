@@ -3,12 +3,11 @@
     name='error-user-not-found'
     @beforeOpen='initData'
   )
-   .not-found
-     h2.not-found__title Пользователь не найден!
-     p.not-found__subtitle Пользователь с почтой {{data.login}} не найден
-     UiButton(
-        size='parent-width'
-        @click.prevent='goToRegistration'
+    template(v-slot:title) Пользователь не найден!
+    template(v-slot:default) Пользователь с почтой {{data.login}} не найден
+    template(v-slot:footer)
+      UiButton(
+       @click.prevent='goToRegistration'
       ) Зарегистрироваться
 </template>
 
@@ -28,7 +27,6 @@ export default Vue.extend({
   },
   methods: {
     initData(event: any) {
-      console.log(event);
       this.data.login = event.ref.params
     },
     goToRegistration(): void {
@@ -42,16 +40,4 @@ export default Vue.extend({
 <style lang='scss' scoped>
 @import "~/styles/mixins.scss";
 
-.not-found {
-  display: flex;
-  flex-direction: column;
-
-  &__title {
-    font-size: 25px;
-  }
-
-  &__subtitle {
-    font-size: 16px;
-  }
-}
 </style>

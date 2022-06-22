@@ -1,6 +1,6 @@
 import validation from './validation'
 import mixins from 'vue-typed-mixins'
-import { DataType, Messages } from '~/validation/validation-interface'
+import { DataType, Messages } from '~/types/validation/validation-interface'
 
 export default mixins(validation).extend({
   data() {
@@ -43,8 +43,6 @@ export default mixins(validation).extend({
     },
     errorHandler(serverError : Messages) {
       console.log('try to detect error', serverError)
-      console.log(this.data);
-
 
       if (['Возникли ошибки: Login уже существует'].includes(serverError.message)) {
         this.$vfm.show('error-login-exist', this.data.login)
@@ -59,9 +57,9 @@ export default mixins(validation).extend({
 
       // если не удалось найти соответствующую модалку - выводим ошибку под формой по умолчанию
       throw new Error(serverError.message)
-    },
+   },
     async componentHandler() {},
-  },
+ },
 })
 
 

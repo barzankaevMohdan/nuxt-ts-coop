@@ -3,8 +3,8 @@
     ModalsForgotPassword
     ModalsErrorLoginExist
     ModalsErrorUserNotFound
-    ModalsRegistrationModal
-    ModalsLoginModal
+    ModalsRegistration
+    ModalsLogin
 </template>
 
 <script lang="ts">

@@ -1,6 +1,6 @@
 import Validator from  'validatorjs'
-import { ErrorHandler, GetValidation } from '~/validation/validation-interface'
-import {AttributeNamesType, RulesTypes } from '~/validation/validation-types'
+import { ErrorHandler, GetValidation } from '~/types/validation/validation-interface'
+import {AttributeNamesType, RulesTypes } from '~/types/validation/validation-types'
 import Vue from 'vue'
 
 

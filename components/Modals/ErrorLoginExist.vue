@@ -3,12 +3,11 @@
     name='error-login-exist'
     @beforeOpen='initData'
   )
-    .login-exist
-     h2.login-exist__title Пользователь уже существует!
-     p.login-exist__subtitle Пользователь {{data.login}} уже существует
-     UiButton(
-        size='parent-width'
-        @click.prevent='goToLogin'
+    template(v-slot:title) Пользователь уже существует!
+    template(v-slot:default) Пользователь {{data.login}} уже существует
+    template(v-slot:footer)
+      UiButton(
+       @click.prevent='goToLogin'
       ) Войти
 </template>
 
@@ -28,7 +27,6 @@ export default Vue.extend({
   },
   methods: {
     initData(event: any) {
-      console.log(event);
       this.data.login = event.ref.params
     },
     goToLogin(): void {
@@ -42,17 +40,4 @@ export default Vue.extend({
 <style lang='scss' scoped>
 @import "~/styles/mixins.scss";
 
-.login-exist {
-  display: flex;
-  flex-direction: column;
-
-  &__title {
-    font-size: 25px;
-
-  }
-
-  &__subtitle {
-    font-size: 16px;
-  }
-}
 </style>
