@@ -1,0 +1,21 @@
+[
+  {
+    "id": "1",
+    "name": "Geforce RTX 3090 TI 24Гб",
+    "memory": "24Гб",
+    "memory_type": "GDDR6X",
+    "psu": "1000vt",
+    "rgb": "yes",
+    "year": "2020"
+  },
+  {
+    "id": "2",
+    "name": "MSI GEFORCE RTX VENTUS 3080 10 Гб",
+    "memory": "10Гб",
+    "memory_type": "GDDR6X",
+    "psu": "1000vt",
+    "rgb": "yes",
+    "year": "2020"
+  }
+]
+

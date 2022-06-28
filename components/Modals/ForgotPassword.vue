@@ -31,7 +31,6 @@ export default Vue.extend({
   },
   methods: {
     initData(event: any) {
-      console.log(event);
       this.data.login = event.ref.params
     },
     close() {

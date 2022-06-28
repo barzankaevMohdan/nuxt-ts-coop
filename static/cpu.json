@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Intel Core i7-10700KF",
+    "L3_cache": "12Мб",
+    "socket": "LGA 1200",
+    "processor_cores": "8",
+    "core_speed": "3800 МГц",
+    "core": "Comet Lake"
+  },
+  {
+    "id": "2",
+    "name": "AMD Ryzen 9 5900X",
+    "L3_cache": "64Мб",
+    "socket": "AM4",
+    "processor_cores": "12",
+    "core_speed": "3700 МГц",
+    "core": "Vermeer"
+  }
+]
