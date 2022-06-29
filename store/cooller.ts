@@ -19,7 +19,6 @@ export const actions: ActionTree<RootState, RootState> = {
     return new Promise((resolve, reject) => {
       api
        .getData().then((data) => {
-        console.log(data);
         commit('addColler', data.data)
        })
     })

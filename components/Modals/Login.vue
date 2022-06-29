@@ -1,14 +1,6 @@
 <template lang='pug'>
- UiModal(
-      name='user-login'
-    )
+ UiModal(name='user-login')
     FormLogin
-     template(v-slot:footer)
-      UiButton(
-        size='parent-width'
-        theme='fill-additional'
-        @click.prevent='forgotYourPassword'
-      ) Напомнить пароль
 </template>
 
 <script lang="ts">

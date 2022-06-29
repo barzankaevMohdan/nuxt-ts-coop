@@ -30,8 +30,8 @@ export default Vue.extend({
       this.data.login = event.ref.params
     },
     goToLogin(): void {
-      this.$vfm.show('user-login', this.data.login)
-      this.$vfm.hide('error-login-exist')
+      this.$vfm.hide('user-login', this.data.login)
+      this.$vfm.show('error-login-exist')
     }
   },
 })

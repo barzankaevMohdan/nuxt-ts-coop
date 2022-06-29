@@ -30,8 +30,8 @@ export default Vue.extend({
       this.data.login = event.ref.params
     },
     goToRegistration(): void {
-      this.$vfm.show('user-registration', this.data.login)
-      this.$vfm.hide('error-user-not-found')
+      this.$vfm.hide('user-registration', this.data.login)
+      this.$vfm.show('error-user-not-found')
     }
   },
 })

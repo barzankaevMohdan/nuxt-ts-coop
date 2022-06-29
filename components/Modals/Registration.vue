@@ -1,7 +1,5 @@
 <template lang='pug'>
- UiModal(
-      name='user-registration'
-    )
+ UiModal(name='user-registration')
   FormRegistration
 </template>
 
@@ -10,7 +8,6 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'RegistrationModal',
-
 })
 </script>
 
