@@ -1,6 +1,6 @@
 <template lang="pug">
   LayoutsPageContent
-    FormRegistrationForm
+    FormLogin
 </template>
 
 <script lang="ts">

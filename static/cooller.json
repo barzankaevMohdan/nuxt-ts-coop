@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "name": "ID-COOLING AURAFLOW X 360",
+    "radiator_material": "алюминий",
+    "cooller_height": "95",
+    "rotation_speed": "500 - 1800 об/мин",
+    "airflow": "76.52 CFM",
+    "noise_level": "17.6 - 31.3 дБ",
+    "bearing_type": "гидродинамический",
+    "light": "отсутствует",
+    "uptime": "50000 ч",
+    "weght": "1693 г",
+    "waterblock_material": "медь"
+  },
+  {
+    "id": "2",
+    "name": "NZXT Kraken X73",
+    "radiator_material": "алюминий",
+    "cooller_height": "50",
+    "rotation_speed": "500 - 2000 об/мин",
+    "noise_level": "21 - 36 дБ",
+    "bearing_type": "",
+    "light": "",
+    "uptime": "",
+    "weght": "1290 г",
+    "waterblock_material": "медь"
+  }
+]

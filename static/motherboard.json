@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1",
+    "name": "ASUS TUF GAMING B560-PLUS WIFI",
+    "form_factor": "4",
+    "slots": "4",
+    "chipset": "Intel B560",
+    "sound": "8-channel (7.1)",
+    "socket": "1200",
+    "expansion_slots": "PCI-E 4.0 x16, PCI-E 3.0 x16, 3 x PCI-E x1, 2 x PCI-E M.2",
+    "slots_types": "- Key M, 2242/2260/2280/22110 (PCIe 4.0 x4);- Key M, 2242/2260/2280/22110 (PCIe 3.0 x4 & SATA)"
+  },
+  {
+    "id": "2",
+    "name": "ASUS TUF GAMING X570-PLUS",
+    "form_factor": "4",
+    "slots": "4",
+    "chipset": "AMD TRX40",
+    "sound": "8-channel (7.1)",
+    "socket": "AM4",
+    "expansion_slots": "2 x PCI-E 4.0 x16, 3 x PCI-E x1, PCI-E M.2",
+    "slots_types": "2 x PCI-E 4.0 x16, 3 x PCI-E x1, PCI-E M.2"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1",
+    "name": "480 Гб Kingston M.2",
+    "memory": "480 Гб",
+    "form_factor": "2280",
+    "connector_M": "есть",
+    "flash_memory_type": "TLC 3D NAND",
+    "interface_max_speed": "600 МБ/с",
+    "reading_speed": "550 Мб/сек",
+    "recording_speed": "520 Мб/сек"
+  },
+  {
+    "id": "2",
+    "name": "500 Гб Gigabyte Aorus",
+    "memory": "500 Гб",
+    "form_factor": "M.2",
+    "connector_M": "",
+    "flash_memory_type": "TLC",
+    "interface_max_speed": "",
+    "reading_speed": "5000 Мб/сек",
+    "recording_speed": "2500 Мб/сек"
+  }
+]

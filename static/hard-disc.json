@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "name": "4 Тб Seagate",
+    "type": "HDD",
+    "memory": "4000Гб",
+    "buffered_memory": "256 МБ",
+    "conection": "SATA 6Gbit/s"
+  },
+  {
+    "id": "2",
+    "name": "10 Тб Seagate IRONWOLF",
+    "type": "HDD",
+    "memory": "8000 Гб",
+    "buffered_memory": "256 МБ",
+    "conection": "SATA 6Gbit/s"
+  }
+]

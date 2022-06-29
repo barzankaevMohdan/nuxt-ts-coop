@@ -16,7 +16,7 @@
             SvgIcon(name='close')
         .modal__icon(v-if='hasSlot("icon")')
           slot.modal__icon(name='icon')
-        UiHeadline(v-if='hasSlot("title")' tag='h4')
+        div.modal__title(v-if='hasSlot("title")' tag='h4')
           slot(name='title')
         div.modal__description(v-if='hasSlot("default")')
           slot(:params="params")
@@ -52,7 +52,7 @@ export default Vue.extend({
     },
     beforeOpen(data: any) {
       console.log(data);
-      
+
       this.$emit('beforeOpen', data)
     },
     opened(data: any) {
