@@ -16,7 +16,7 @@
             SvgIcon(name='close')
         .modal__icon(v-if='hasSlot("icon")')
           slot.modal__icon(name='icon')
-        div.modal__title(v-if='hasSlot("title")' tag='h4')
+        UiHeadline.modal__title(v-if='hasSlot("title")' tag='h3')
           slot(name='title')
         div.modal__description(v-if='hasSlot("default")')
           slot(:params="params")
@@ -31,7 +31,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'UiModal',
+  name: 'Modal',
   props: {
     name: {
       type: String,
@@ -51,8 +51,6 @@ export default Vue.extend({
       this.$emit('clickOutside', data)
     },
     beforeOpen(data: any) {
-      console.log(data);
-
       this.$emit('beforeOpen', data)
     },
     opened(data: any) {
@@ -97,8 +95,6 @@ export default Vue.extend({
   --modal-border-radius: 20px;
   --modal-text-size: var(--main-size);
   --modal-text-line-height: 1.5;
-  --modal-title-size: var(--main-larger-size);
-  --modal-title-line-height: 1.3;
   --modal-footer-margin-top: var(--modal-base-gap);
   --modal-icon-padding-bottom: var(--modal-base-gap);
   --modal-close-gap: 40px;
@@ -118,11 +114,7 @@ export default Vue.extend({
     --modal-base-gap: 30px;
     --modal-padding: 50px 30px 30px;
     --modal-border-radius: 10px;
-
     --modal-text-size: 14px;
-
-    --modal-title-size: 24px;
-
     --modal-close-gap: 20px;
     --modal-close-size: 15px;
   }
@@ -145,9 +137,6 @@ export default Vue.extend({
   }
 
   &__title {
-    font-weight: 600;
-    font-size: var(--modal-title-size);
-    line-height: var(--modal-title-line-height);
     color: var(--modal-title-color);
     margin: 0 0 20px;
     padding: 0;

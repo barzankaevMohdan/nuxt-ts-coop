@@ -29,7 +29,6 @@
 <script lang="ts">
 import Vue from 'vue'
 import formsFunctions from '~/mixins/formsFunctions'
-import {IUserData} from '~/store/user'
 
 export default Vue.extend({
   name: 'LoginForm',

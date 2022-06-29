@@ -1,6 +1,6 @@
 <template lang='pug'>
- UiModal(name='user-registration')
-  FormRegistration
+  UiModal(name='user-registration')
+    FormRegistration
 </template>
 
 <script lang="ts">

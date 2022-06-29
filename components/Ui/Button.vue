@@ -33,7 +33,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'UiButton',
+  name: 'Button',
   props: {
     loadingText: {
       type: String,

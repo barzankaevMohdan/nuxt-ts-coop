@@ -16,12 +16,6 @@
           'text-input__input_with-two-btn': hasTwoBtnSlot,
           'text-input__input_password': type === 'password',
         }"
-        :value="value"
-        :placeholder="placeholder"
-        :required="required"
-        :disabled="disabled"
-        :name="name"
-        :type="type"
         @input="onInput"
         @keyup.enter="$emit('handleKeypress')"
         v-bind="$attrs"
@@ -41,33 +35,8 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'UiInput',
+  name: 'Input',
   props: {
-    value: {
-      type: [String, Number],
-      required: false,
-      default: null,
-    },
-    placeholder: {
-      type: String,
-      required: false,
-    },
-    required: {
-      type: Boolean,
-      required: false,
-    },
-    disabled: {
-      type: Boolean,
-      required: false,
-    },
-    name: {
-      type: String,
-      required: false,
-    },
-    type: {
-      type: String,
-      default: 'text',
-    },
     error: {
       type: String,
       default: '',
@@ -96,7 +65,7 @@ export default Vue.extend({
 </script>
 <style lang="scss">
 :root {
-  /* Размеры кнопки */
+  /* Размеры инпута */
   --text-input-vertical-padding: var(--main-input-vertical-padding);
   --text-input-horizontal-padding: var(--main-input-horizontal-padding);
   --text-input-border-width: 1px;
@@ -104,7 +73,7 @@ export default Vue.extend({
   --text-input-text-size: var(--main-size);
   --text-input-border-radius: var(--main-input-radius);
 
-  /* Цвета кнопки */
+  /* Цвета инпута */
   --text-input-label-base-color: var(--main-light);
   --text-input-label-error-color: var(--main-danger-color);
   --text-input-label-correct-color: var(--main-success-color);

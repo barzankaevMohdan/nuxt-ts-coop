@@ -1,5 +1,5 @@
 <template lang='pug'>
- UiModal(name='user-login')
+  UiModal(name='user-login')
     FormLogin
 </template>
 
