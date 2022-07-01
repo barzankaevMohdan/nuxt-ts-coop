@@ -22,18 +22,25 @@ export default {
 
 <style scoped lang='scss'>
 @import "~/styles/mixins.scss";
+@import "~/styles/variables/variables.scss";
+
 .nav-link {
   display: inline-block;
   font-weight: 600;
   font-size: var(--main-small-text);
   line-height: 1.4;
   text-align: center;
+  padding-right: 15px;
   cursor: pointer;
   transition: .2s linear;
-  &_sidebar {
-    font-size: var(--main-larger-size);
+
+ &_sidebar {
+    @include tablets() {
+    font-size: var(--main-large-size);
     line-height: 1.3;
+    padding-bottom: 15px;
     font-weight: 700;
+  }
   }
   &,
   &:focus,

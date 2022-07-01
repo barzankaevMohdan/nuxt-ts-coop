@@ -21,11 +21,13 @@ export default {
   data() {
     return {
       isOpen: false,
+      dropdown: false
     }
   },
   methods: {
     toggleDropDown() {
       this.$emit('click')
+      this.dropdown = true
       if (this.dropdown) {
         this.isOpen = !this.isOpen
       }

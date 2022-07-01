@@ -17,7 +17,7 @@ export default {
     },
     src: {
       type: String,
-      default: '',
+      default: require("~/assets/img/logo/logo-night.png"),
     },
   },
 }

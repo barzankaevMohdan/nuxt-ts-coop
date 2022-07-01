@@ -23,8 +23,8 @@ export interface iRecoveryData {
 export type RootState = ReturnType<typeof state>
 
 export const state = () => ({
-  user: {} as IUser,
-  token: localStorage.getItem('token'),
+  user: {name:'halid'} as IUser,
+  token: true,
   isLoading: false,
 })
 
@@ -32,7 +32,7 @@ export const mutations: MutationTree<RootState> = {
   clear(state) {
     state.isLoading = false
     state.user = {} as IUser
-    state.token = null
+    state.token = true
     localStorage.removeItem('token')
   },
   update(state, {token, user}) {
