@@ -22,7 +22,6 @@ export default {
 
 <style scoped lang='scss'>
 @import "~/styles/mixins.scss";
-@import "~/styles/variables/variables.scss";
 
 .nav-link {
   display: inline-block;

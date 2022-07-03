@@ -1,11 +1,11 @@
 <template lang='pug'>
   nav(
     class='nav'
-    :class="{[`nav-${theme}`]: theme}"
+    :class="{[`nav_${theme}`]: theme}"
   )
-    NavigationLinkBase(theme='sidebar') Конфигуратор Пк
-    NavigationLinkBase(theme='sidebar') Конфигуратор Пк
-    NavigationLinkBase(theme='sidebar') Конфигуратор Пк
+    NavigationLink(theme='sidebar') Конфигуратор Пк
+    NavigationLink(theme='sidebar') Конфигуратор Пк
+    NavigationLink(theme='sidebar') Конфигуратор Пк
 </template>
 
 <script>
@@ -18,20 +18,12 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import "~/styles/mixins.scss";
-@import "~/styles/variables/variables.scss";
-
 .nav {
   display: flex;
 
-  @include tablets() {
-    display: none;
- }
-
-  &-sidebar {
+  &_sidebar {
     display: flex;
     flex-direction: column;
   }
 }
-
 </style>

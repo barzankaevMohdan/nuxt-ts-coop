@@ -1,10 +1,12 @@
 <template lang='pug'>
   UiSidebar(:sidebar="sidebar")
-    .sidebar-content
+    .sidebar__content
+     .sidebar__burger
+      UiBurger(:showMenu='sidebar' @click="$emit('close')")
      BaseNavigation(theme='sidebar')
      template(v-if='isAuth')
       UiButton(@click.prevent='showLogin' theme='fill-additional') выйти
-      SvgIcon.sidebar-basket(name="basket")
+      SvgIcon.sidebar__basket(name="basket")
 
      template(v-else)
       UiButton(@click.prevent='showLogin' theme='fill-additional') Войти
@@ -14,11 +16,11 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'Sidabar',
+  name: 'Sidebar',
   props:{
     sidebar:{
       type: Boolean,
-      default: false
+      default: false,
     }
   },
   methods: {
@@ -36,8 +38,7 @@ export default Vue.extend({
 
 <style scoped lang='scss'>
 @import "~/styles/mixins.scss";
-
-.sidebar-content {
+.sidebar__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,10 +46,16 @@ export default Vue.extend({
   min-height: 100vh;
   padding: 50px 0;
 }
-
-.sidebar-basket {
+.sidebar__basket {
   max-width: 36px;
   max-height: 30px;
 }
+.sidebar__burger {
+  display: none;
 
+  @include tablets() {
+    display: block;
+    margin-bottom: 25px;
+ }
+}
 </style>
