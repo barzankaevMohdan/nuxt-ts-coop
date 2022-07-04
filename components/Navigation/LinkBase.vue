@@ -22,6 +22,7 @@ export default {
 
 <style scoped lang='scss'>
 @import "~/styles/mixins.scss";
+
 .nav-link {
   display: inline-block;
   font-weight: 600;
@@ -30,10 +31,13 @@ export default {
   text-align: center;
   cursor: pointer;
   transition: .2s linear;
-  &_sidebar {
-    font-size: var(--main-larger-size);
+
+ &_sidebar {
+    @include tablets() {
+    font-size: var(--main-large-size);
     line-height: 1.3;
     font-weight: 700;
+  }
   }
   &,
   &:focus,
