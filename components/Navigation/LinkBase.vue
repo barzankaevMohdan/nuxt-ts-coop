@@ -36,7 +36,6 @@ export default {
     @include tablets() {
     font-size: var(--main-large-size);
     line-height: 1.3;
-    padding-bottom: 15px;
     font-weight: 700;
   }
   }

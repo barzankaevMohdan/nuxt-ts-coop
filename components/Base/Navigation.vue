@@ -3,9 +3,9 @@
     class='nav'
     :class="{[`nav_${theme}`]: theme}"
   )
-    NavigationLink.nav__link(theme='sidebar') Конфигуратор Пк
-    NavigationLink.nav__link(theme='sidebar') Конфигуратор Пк
-    NavigationLink.nav__link(theme='sidebar') Конфигуратор Пк
+    NavigationLink.nav__link(:theme='sidebar') Конфигуратор Пк
+    NavigationLink.nav__link(:theme='sidebar') Конфигуратор Пк
+    NavigationLink.nav__link(:theme='sidebar') Конфигуратор Пк
 </template>
 
 <script>
