@@ -29,7 +29,6 @@ export default {
   font-size: var(--main-small-text);
   line-height: 1.4;
   text-align: center;
-  padding-right: 15px;
   cursor: pointer;
   transition: .2s linear;
 

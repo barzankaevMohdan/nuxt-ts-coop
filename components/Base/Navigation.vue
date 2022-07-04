@@ -3,9 +3,9 @@
     class='nav'
     :class="{[`nav_${theme}`]: theme}"
   )
-    NavigationLink(theme='sidebar') Конфигуратор Пк
-    NavigationLink(theme='sidebar') Конфигуратор Пк
-    NavigationLink(theme='sidebar') Конфигуратор Пк
+    NavigationLink.nav__link(theme='sidebar') Конфигуратор Пк
+    NavigationLink.nav__link(theme='sidebar') Конфигуратор Пк
+    NavigationLink.nav__link(theme='sidebar') Конфигуратор Пк
 </template>
 
 <script>
@@ -24,6 +24,10 @@ export default {
   &_sidebar {
     display: flex;
     flex-direction: column;
+  }
+
+  &__link {
+    padding-right: 15px;
   }
 }
 </style>

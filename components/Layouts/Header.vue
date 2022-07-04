@@ -64,8 +64,9 @@ export default Vue.extend({
   &__navigation {
     @include tablets() {
       display: none;
+    }
   }
-}
+
   &__action {
     margin-left: auto;
     display: flex;
@@ -73,7 +74,7 @@ export default Vue.extend({
   }
 
   &__burger {
-    display: none;
+   display: none;
 
    @include tablets() {
       display: block;
@@ -83,13 +84,13 @@ export default Vue.extend({
   &__user {
     @include tablets() {
       display: none;
-   }
+    }
   }
 
   &__btn {
     @include tablets() {
       display: none;
-   }
+    }
   }
 
   &__basket {
@@ -98,7 +99,7 @@ export default Vue.extend({
 
     @include tablets() {
       display: none;
-   }
+    }
   }
 }
 </style>
