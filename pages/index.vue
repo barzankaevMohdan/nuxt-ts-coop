@@ -1,6 +1,6 @@
 <template lang="pug">
   LayoutsPageContent
-    FormRegistration
+    SectionCatalog
 </template>
 
 <script lang="ts">
