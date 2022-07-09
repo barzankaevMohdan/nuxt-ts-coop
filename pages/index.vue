@@ -1,6 +1,6 @@
 <template lang="pug">
   LayoutsPageContent
-    SectionCatalog
+    SectionDetail
 </template>
 
 <script lang="ts">

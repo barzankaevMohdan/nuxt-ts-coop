@@ -1,7 +1,7 @@
 <template lang='pug'>
   section.catalog
     LayoutsContainer
-      UiHeadline.catalog__title(tag='h1') Каталог компютеров
+      UiHeadline.catalog__title(tag='h1') Каталог компьютеров
       .catalog__content
         UiPcCard(
           v-for="item in pc"

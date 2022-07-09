@@ -57,7 +57,7 @@ export default {
   }
 
   &__title {
-    font-size: 20px;
+    --headline-size-h4: 20px;
     margin-top: 20px;
   }
 
@@ -67,8 +67,8 @@ export default {
   }
 
   &__subtitle {
-    color: var(--main-light-color);
-    font-size: 20px;
+    --headline-color: var(--main-light-color);
+    --headline-size-h4: 20px;
   }
 
   &__action {
@@ -82,7 +82,7 @@ export default {
 
   &__description {
     color: #fff;
-    font-size: 12px;
+    font-size: var(--main-smallest-text);
     line-height: 1.33;
     color: #8490a4;
     margin-bottom: 15px;
@@ -106,16 +106,14 @@ export default {
   }
 
   &__components_title {
-    color: #fff;
-    font-size: 12px;
+    --headline-size-h4: 12px;
     line-height: 1.33;
     color: #8490a4;
     margin-top: 20px;
-
   }
 
   &__components_subtitle {
-    font-size: 15px;
+    --headline-size-h4: 15px;
   }
 }
 </style>
