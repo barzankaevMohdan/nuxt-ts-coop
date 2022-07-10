@@ -3,7 +3,7 @@
     span.line.line-1
     span.line.line-2
     span.line.line-3
-  </div>  
+  </div>
 </template>
 
 <script>
