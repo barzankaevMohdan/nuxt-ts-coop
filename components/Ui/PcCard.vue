@@ -11,24 +11,24 @@
     p.card__description {{pc.description}}
     .card__components
       .card__info
-          UiHeadline.card__components_title(tag='h4') Видео карта
-          UiHeadline.card__components_subtitle(tag='h4') {{pc.gpu.name}}
-          UiHeadline.card__components_title(tag='h4') Процессор
-          UiHeadline.card__components_subtitle(tag='h4') {{pc.cpu.name}}
-          UiHeadline.card__components_title(tag='h4') Охлаждение
-          UiHeadline.card__components_subtitle(tag='h4') {{pc.cooller.name}}
-          UiHeadline.card__components_title(tag='h4') Оперативная память
-          UiHeadline.card__components_subtitle(tag='h4') {{pc.ram.name}}
-          UiHeadline.card__components_title(tag='h4') Материнская плата
-          UiHeadline.card__components_subtitle(tag='h4') {{pc.motherboard.name}}
-          UiHeadline.card__components_title(tag='h4') Жёсткий диск
-          UiHeadline.card__components_subtitle(tag='h4') {{pc.hard_disc.name}}
-          UiHeadline.card__components_title(tag='h4') Диск SSD
-          UiHeadline.card__components_subtitle(tag='h4') {{pc.ssd.name}}
-          UiHeadline.card__components_title(tag='h4') Блок питания
-          UiHeadline.card__components_subtitle(tag='h4') {{pc.psu.name}}
-          UiHeadline.card__components_title(tag='h4') Корпус
-          UiHeadline.card__components_subtitle(tag='h4') {{pc.case.name}}
+          UiText.card__components-title(size='small') Видео карта
+          UiText.card__components-subtitle {{pc.gpu.name}}
+          UiText.card__components-title(size='small') Процессор
+          UiText.card__components-subtitle {{pc.cpu.name}}
+          UiText.card__components-title(size='small') Охлаждение
+          UiText.card__components-subtitle {{pc.cooller.name}}
+          UiText.card__components-title(size='small') Оперативная память
+          UiText.card__components-subtitle {{pc.ram.name}}
+          UiText.card__components-title(size='small') Материнская плата
+          UiText.card__components-subtitle {{pc.motherboard.name}}
+          UiText.card__components-title(size='small') Жёсткий диск
+          UiText.card__components-subtitle {{pc.hard_disc.name}}
+          UiText.card__components-title(size='small') Диск SSD
+          UiText.card__components-subtitle {{pc.ssd.name}}
+          UiText.card__components-title(size='small') Блок питания
+          UiText.card__components-subtitle {{pc.psu.name}}
+          UiText.card__components-title(size='small') Корпус
+          UiText.card__components-subtitle {{pc.case.name}}
 </template>
 
 <script>
@@ -85,8 +85,8 @@ export default {
     font-size: var(--main-smallest-text);
     line-height: 1.33;
     color: #8490a4;
-    margin-bottom: 15px;
-    margin-top: 15px;
+    margin-bottom: 35px;
+    margin-top: 25px;
   }
 
   &__components {
@@ -105,15 +105,12 @@ export default {
     margin-left: 5px;
   }
 
-  &__components_title {
-    --headline-size-h4: 12px;
-    line-height: 1.33;
-    color: #8490a4;
-    margin-top: 20px;
+  &__components-title {
+    --text-color: #8490a4;
   }
 
-  &__components_subtitle {
-    --headline-size-h4: 15px;
+  &__components-subtitle {
+    --text-margin-bottom: 20px;
   }
 }
 </style>

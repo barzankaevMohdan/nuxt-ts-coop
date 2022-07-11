@@ -16,38 +16,37 @@
       .detail__components
         UiHeadline(tag='h3') Комплектация
         .detail__block
-          UiHeadline.detail__components_title(tag='h4') Видео карта
-          UiHeadline(tag='h4') NVIDIA GЕFORCE RTX 3090 24Гб
+          UiText.detail__components-title(size='big') Видео карта
+          UiText(size='large') NVIDIA GЕFORCE RTX 3090 24Гб
         .detail__block
-          UiHeadline.detail__components_title(tag='h4') Процессор
-          UiHeadline(tag='h4') Intel Core i7-10700KF 3800 МГц
+          UiText.detail__components-title(size='big') Процессор
+          UiText(size='large') Intel Core i7-10700KF 3800 МГц
         .detail__block
-          UiHeadline.detail__components_title(tag='h4') Охлаждение
-          UiHeadline(tag='h4') ID-COOLING AURAFLOW X 360
+          UiText.detail__components-title(size='big') Охлаждение
+          UiText(size='large') ID-COOLING AURAFLOW X 360
         .detail__block
-          UiHeadline.detail__components_title(tag='h4') Оперативная память
-          UiHeadline(tag='h4') 16Гб Kingston HyperX Fury 3600МГц
+          UiText.detail__components-title(size='big') Оперативная память
+          UiText(size='large') 16Гб Kingston HyperX Fury 3600МГц
         .detail__block
-          UiHeadline.detail__components_title(tag='h4') Материнская плата
-          UiHeadline(tag='h4') ASUS TUF GAMING B560-PLUS WIFI
+          UiText.detail__components-title(size='big') Материнская плата
+          UiText(size='large') ASUS TUF GAMING B560-PLUS WIFI
         .detail__block
-          UiHeadline.detail__components_title(tag='h4') Жёсткий диск
-          UiHeadline(tag='h4') 2 Тб Toshiba
+          UiText.detail__components-title(size='big') Жёсткий диск
+          UiText(size='large') 2 Тб Toshiba
         .detail__block
-          UiHeadline.detail__components_title(tag='h4') Диск SSD
-          UiHeadline(tag='h4') 480 Гб Kingston M.2
+          UiText.detail__components-title(size='big') Диск SSD
+          UiText(size='large') 480 Гб Kingston M.2
         .detail__block
-          UiHeadline.detail__components_title(tag='h4') Блок питания
-          UiHeadline(tag='h4') Блок питания
+          UiText.detail__components-title(size='big') Блок питания
+          UiText(size='large') Блок питания
         .detail__block
-          UiHeadline.detail__components_title(tag='h4') Корпус
-          UiHeadline(tag='h4') Deepcool Matrexx 70 ADD-RGB 3F Black
+          UiText.detail__components-title(size='big') Корпус
+          UiText(size='large') Deepcool Matrexx 70 ADD-RGB 3F Black
 </template>
 
 <script>
 export default {
   name: 'Detail',
-
 }
 </script>
 
@@ -120,9 +119,8 @@ export default {
     margin-top: 45px;
   }
 
-  &__components_title {
-    --headline-size-h4: var(--main-big-size);
-    --headline-color: #8490a4;
+  &__components-title {
+    --text-color: #8490a4;
   }
 }
 

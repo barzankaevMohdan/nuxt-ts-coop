@@ -4,7 +4,8 @@
       UiHeadline.catalog__title(tag='h1') Каталог компьютеров
       .catalog__content
         UiPcCard(
-          v-for="item in pc"
+          v-for="(item,idx) in pc"
+          :key='idx'
           :pc='item'
           )
 </template>
@@ -15,14 +16,14 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Catalog',
+  mounted() {
+    this.$store.dispatch('pc/getPc')
+  },
   computed: {
     pc() {
       return this.$store.getters['pc/pc']
     }
   },
-  mounted() {
-    this.$store.dispatch('pc/getPc')
-  }
 })
 </script>
 
