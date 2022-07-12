@@ -1,6 +1,6 @@
 <template lang="pug">
   LayoutsPageContent
-    FormRegistration
+    FormCase
 </template>
 
 <script lang="ts">
