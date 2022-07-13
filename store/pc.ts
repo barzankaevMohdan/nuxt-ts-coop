@@ -44,5 +44,5 @@ export const actions: ActionTree<RootState, RootState> = {
 }
 
 export const getters: GetterTree<RootState, RootState> = {
-  case: (state) => state.pc,
+  pc: (state) => state.pc,
 }
