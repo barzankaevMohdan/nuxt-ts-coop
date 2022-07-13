@@ -26,9 +26,7 @@ export default {
   methods: {
     toggleDropDown() {
       this.$emit('click')
-      if (this.dropdown) {
-        this.isOpen = !this.isOpen
-      }
+      this.isOpen = !this.isOpen
     },
     closeDrop() {
       this.isOpen = false
