@@ -20,12 +20,12 @@
     UiInput.case-form__field(
       v-model.trim='data.manufacturer'
       :error='errors["manufacturer"]'
-      placeholder="Манафактура"
+      placeholder="Производитель"
     )
     UiInput.case-form__field(
       v-model.trim='data.dimension_type'
       :error='errors["dimension_type"]'
-      placeholder="Тип дим"
+      placeholder="Тип корпуса"
     )
     UiInput.case-form__field(
       v-model.trim='data.cpu_cooller_height'
@@ -45,20 +45,20 @@
     UiInput.case-form__field(
       v-model.trim='data.power_placement'
       :error='errors["power_placement"]'
-      placeholder="Силовое размещение"
+      placeholder="Размещение блока питания"
     )
     UiPicker.case-form__field(
       @handleKeypress='handleKeypress'
       :tags= 'data.board_form_factor'
       :error='errors["board_form_factor"]'
-      placeholder="Теги"
+      placeholder="Форм фактор совместимых плат"
     )
     span.case-form__error(v-if='serverError') {{serverError}}
     .case-form__footer
       UiButton(
         size='parent-width'
         :isLoading='isLoading'
-      ) Отправить
+      ) Создать
 </template>
 
 <script lang="ts">
@@ -86,20 +86,7 @@ export default Vue.extend({
   mixins: [formsFunctions],
   methods: {
     async componentHandler(): Promise<void> {
-      const caseData = {
-        name: this.data.name,
-        description: this.data.description,
-        img: this.data.img,
-        manufacturer: this.data.manufacturer,
-        dimension_type: this.data.dimension_type,
-        power_placement: this.data.power_placement,
-        cpu_cooller_height: this.data.cpu_cooller_height,
-        height: this.data.height,
-        board_form_factor: this.data.board_form_factor,
-        color: this.data.color
-      }
-
-      await this.$store.dispatch('case/postCase', caseData)
+      await this.$store.dispatch('case/postCase', {...this.data})
     },
     handleKeypress(tag: string) {
       this.data.board_form_factor.push(tag)
@@ -125,12 +112,12 @@ export default Vue.extend({
         name: 'имя',
         description: 'описание',
         img: 'картинка',
-        manufacturer: 'манафактура',
-        dimension_type: 'тип дим',
-        power_placement: 'силовое размещение',
+        manufacturer: 'производитель',
+        dimension_type: 'тип корпуса',
+        power_placement: 'размещение блока питания',
         cpu_cooller_height: 'высота куллера',
         height: 'высота',
-        board_form_factor: 'форма факт доски',
+        board_form_factor: 'форм фактор совместимых плат',
         color: 'цвет'
       }
     },

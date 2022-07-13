@@ -20,7 +20,7 @@
     UiInput.gpu-form__field(
       v-model.trim='data.manufacturer'
       :error='errors["manufacturer"]'
-      placeholder="Манафактура"
+      placeholder="Производитель"
     )
     UiInput.gpu-form__field(
       v-model.trim='data.memory'
@@ -30,7 +30,7 @@
     UiInput.gpu-form__field(
       v-model.trim='data.gpu_manufacturer'
       :error='errors["gpu_manufacturer"]'
-      placeholder="Манафактура Карты"
+      placeholder="Производитель Карты"
     )
     UiInput.gpu-form__field(
       v-model.trim='data.memory_type'
@@ -67,17 +67,7 @@ export default Vue.extend({
   mixins: [formsFunctions],
   methods: {
     async componentHandler(): Promise<void> {
-      const gpuData = {
-        name: this.data.name,
-        description: this.data.description,
-        img: this.data.img,
-        manufacturer: this.data.manufacturer,
-        memory: this.data.memory,
-        gpu_manufacturer: this.data.gpu_manufacturer,
-        memory_type: this.data.memory_type
-      }
-
-      await this.$store.dispatch('gpu/postGpu', gpuData)
+      await this.$store.dispatch('gpu/postGpu', {...this.data})
     },
   },
   computed: {
@@ -97,9 +87,9 @@ export default Vue.extend({
         name: 'имя',
         description: 'описание',
         img: 'картинка',
-        manufacturer: 'манафактура',
+        manufacturer: 'производитель',
         memory: 'память',
-        gpu_manufacturer: 'манафактура карты',
+        gpu_manufacturer: 'производитель карты',
         memory_type: 'тип памяти'
       }
     },

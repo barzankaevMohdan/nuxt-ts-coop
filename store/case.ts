@@ -36,7 +36,7 @@ export const actions: ActionTree<RootState, RootState> = {
        })
     })
   },
-  postCase({}, caseData) {
+  postCase({}, caseData: caseData) {
     return new Promise((resolve, reject) => {
       api
         .postData(

@@ -27,7 +27,7 @@ export default Vue.extend({
   methods: {
     handleKeypress(): any {
       if (!this.tag) return
-        this.$emit('handleKeypress',this.tag)
+      this.$emit('handleKeypress', this.tag)
     }
   }
 })
