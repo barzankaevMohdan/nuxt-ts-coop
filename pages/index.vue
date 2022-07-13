@@ -1,6 +1,6 @@
 <template lang="pug">
   LayoutsPageContent
-    SectionDetail
+    FormCase
 </template>
 
 <script lang="ts">
