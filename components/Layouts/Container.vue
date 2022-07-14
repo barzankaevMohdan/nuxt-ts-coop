@@ -13,7 +13,7 @@ export default {
 @import "~/styles/mixins.scss";
 .container {
   width: 100%;
-  max-width: 1196px;
+  max-width: 1440px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
