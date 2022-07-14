@@ -117,8 +117,8 @@ export default Vue.extend({
   }
 
   &__right {
-    width: 30%;
-    margin-left: 150px;
+    width: 40%;
+    margin-left: 140px;
   }
 
   &__form {

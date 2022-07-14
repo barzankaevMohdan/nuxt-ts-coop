@@ -20,7 +20,7 @@
     )
     span.cart-form__error(v-if='serverError') {{serverError}}
     .cart-form__footer
-      UiButton.cart-form__btn(
+      UiButton(
         size='parent-width'
         :isLoading='isLoading'
       ) Оформить
@@ -66,9 +66,6 @@ export default Vue.extend({
 .cart-form {
   &__field {
     margin-top: 20px;
-    --text-input-border-radius: none;
-    --text-input-vertical-padding: 15px;
-    --text-input-border-color: var(--gray-2);
   }
 
   &__footer {
@@ -81,10 +78,6 @@ export default Vue.extend({
     line-height: 1.4;
     color: var(--main-danger-color);
     margin: var(--main-input-label-offset-top) 0 0 var(--main-input-label-offset-left);
-  }
-
-  &__btn {
-    --button-main-color: var(--main-success-color);
   }
 }
 </style>
