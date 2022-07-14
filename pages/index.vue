@@ -1,6 +1,6 @@
 <template lang="pug">
   LayoutsPageContent
-    FormCase
+    SectionCart
 </template>
 
 <script lang="ts">
