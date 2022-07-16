@@ -52,11 +52,6 @@ export default {
       return this.$store.getters['pc/id'](this.$route.params.id)
     }
   },
-  methods: {
-    t() {
-      console.log(this.pc);
-    }
-  }
 }
 </script>
 
