@@ -1,6 +1,7 @@
 <template lang="pug">
   LayoutsPageContent
-    SectionCart
+    LayoutsHeader
+    SectionCatalog
 </template>
 
 <script lang="ts">

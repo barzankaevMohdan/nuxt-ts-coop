@@ -7,7 +7,7 @@
       SvgIcon.card__svg(name="rub")
     .card__action
       UiButton.card__btn Купить
-      UiButton(theme='outline') Подробнее
+      UiButton(theme='outline' @click='toDetail(pc.id)') Подробнее
     p.card__description {{pc.description}}
     .card__components
       .card__info
@@ -39,6 +39,11 @@ export default {
       type: Object,
     },
   },
+  methods: {
+    toDetail(id) {
+      this.$router.push('/detail/' + id)
+    }
+  }
 }
 </script>
 

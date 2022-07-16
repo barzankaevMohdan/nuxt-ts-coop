@@ -4,12 +4,12 @@
       .detail__content
         .detail__left
           UiHeadline.detail__title(tag='h4') Edelweiss
-          UiHeadline(tag='h2') EDELWEISS FALCON
-          p.detail__description Сверхпроизводительный компьютер EDELWEISS <br> FALCON. Многоядерный процессор INTEL десятой <br> серии обеспечит колоссальную вычислительную <br> скорость  в сложных профессиональных <br> программах. Тяжелая графика и обработка видео <br> основное кредо и визитная карточка этого монстра.
+          UiHeadline(tag='h2') {{pc.name}}
+          p.detail__description {{pc.description}}
           .detail__action
             UiButton Купить
             .detail__wrapper
-            span.detail__price 352 350
+            span.detail__price {{pc.price}}
             SvgIcon.detail__svg(name="rub")
         .detail__right
           img.detail__img(src="../../assets/pc/pc.png", alt="")
@@ -17,36 +17,46 @@
         UiHeadline(tag='h3') Комплектация
         .detail__block
           UiText.detail__components-title(size='big') Видео карта
-          UiText(size='large') NVIDIA GЕFORCE RTX 3090 24Гб
+          UiText(size='large') {{pc.gpu.name}}
         .detail__block
           UiText.detail__components-title(size='big') Процессор
-          UiText(size='large') Intel Core i7-10700KF 3800 МГц
+          UiText(size='large') {{pc.cpu.name}}
         .detail__block
           UiText.detail__components-title(size='big') Охлаждение
-          UiText(size='large') ID-COOLING AURAFLOW X 360
+          UiText(size='large') {{pc.cooller.name}}
         .detail__block
           UiText.detail__components-title(size='big') Оперативная память
-          UiText(size='large') 16Гб Kingston HyperX Fury 3600МГц
+          UiText(size='large') {{pc.ram.name}}
         .detail__block
           UiText.detail__components-title(size='big') Материнская плата
-          UiText(size='large') ASUS TUF GAMING B560-PLUS WIFI
+          UiText(size='large') {{pc.motherboard.name}}
         .detail__block
           UiText.detail__components-title(size='big') Жёсткий диск
-          UiText(size='large') 2 Тб Toshiba
+          UiText(size='large') {{pc.hard_disc.name}}
         .detail__block
           UiText.detail__components-title(size='big') Диск SSD
-          UiText(size='large') 480 Гб Kingston M.2
+          UiText(size='large') {{pc.ssd.name}}
         .detail__block
           UiText.detail__components-title(size='big') Блок питания
-          UiText(size='large') Блок питания
+          UiText(size='large') {{pc.psu.name}}
         .detail__block
           UiText.detail__components-title(size='big') Корпус
-          UiText(size='large') Deepcool Matrexx 70 ADD-RGB 3F Black
+          UiText(size='large') {{pc.case.name}}
 </template>
 
 <script>
 export default {
   name: 'Detail',
+  computed: {
+    pc() {
+      return this.$store.getters['pc/id'](this.$route.params.id)
+    }
+  },
+  methods: {
+    t() {
+      console.log(this.pc);
+    }
+  }
 }
 </script>
 
@@ -72,7 +82,7 @@ export default {
   }
 
   &__description {
-    font-size: var(--main-large-size);
+    font-size: var(--main-big-size);
     line-height: 1.33;
     color: #8490a4;
   }
