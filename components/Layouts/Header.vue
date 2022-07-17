@@ -12,7 +12,7 @@
         BaseUser.header__user(v-if='isAuth')
         template(v-else)
           UiButton.header__btn(@click.prevent='showLogin' theme='fill-additional') Войти
-          SvgIcon.header__basket(name="basket" @click='toCart')
+          SvgIcon.header__basket(name="basket")
 
       LayoutsSidebar(:sidebar='sidebar'  @close="sidebar = false")
 </template>
@@ -34,9 +34,6 @@ export default Vue.extend({
     showSidebar() {
       this.sidebar = !this.sidebar
     },
-    toCart() {
-      this.$router.push('/cart')
-    }
   },
   computed: {
     isAuth():Boolean {
