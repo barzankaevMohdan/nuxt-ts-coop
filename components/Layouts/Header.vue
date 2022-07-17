@@ -33,7 +33,7 @@ export default Vue.extend({
     },
     showSidebar() {
       this.sidebar = !this.sidebar
-    }
+    },
   },
   computed: {
     isAuth():Boolean {

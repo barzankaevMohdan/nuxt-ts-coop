@@ -7,7 +7,7 @@
     UiAvatar.user__photo(:userName="user.name" :src="user.picture" :size="45")
 
     .user__drop(v-show="isOpen")
-      .user__drop-item(@click='$router.push("/lk")')
+      .user__drop-item(@click='toCart')
         SvgIcon.user__drop-svg(name='basket')
         a.user__drop-link Корзина
       .user__drop-item(@click.prevent='logout')
@@ -37,6 +37,9 @@ export default {
           this.$router.go()
         })
     },
+    toCart() {
+      this.$router.push('/cart')
+    }
   },
   computed: {
     user() {

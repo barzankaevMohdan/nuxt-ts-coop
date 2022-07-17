@@ -45,4 +45,5 @@ export const actions: ActionTree<RootState, RootState> = {
 
 export const getters: GetterTree<RootState, RootState> = {
   pc: (state) => state.pc,
+  id: (state) => (id: string|number) => state.pc.find(el => el.id === id)
 }
