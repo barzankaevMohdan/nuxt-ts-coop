@@ -26,5 +26,5 @@ export const actions: ActionTree<RootState, RootState> = {
 }
 
 export const getters: GetterTree<RootState, RootState> = {
-  case: (state) => state.ram,
+  ram: (state) => state.ram,
 }
