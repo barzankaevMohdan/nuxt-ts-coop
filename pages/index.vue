@@ -1,9 +1,8 @@
 <template lang="pug">
   LayoutsPageContent
-    //- LayoutsHeader
-    //- BaseIntro
-    //- SectionCatalog
-    SectionBuild
+    LayoutsHeader
+    BaseIntro
+    SectionCatalog
 </template>
 
 <script lang="ts">

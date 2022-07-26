@@ -2,33 +2,33 @@
   form.pc-form(
     @submit.prevent='submit'
   )
-    .pc__wrapper(@click='t')
-      UiText.pc__text(size='large') Процессор
-      UiSelect(:items='cpu' v-model='data.cpu' @input='test')
-    .pc__wrapper
+    .pc-form__field
+      UiText.pc-form__text(size='large') Процессор
+      UiSelect(:items='cpu'  @input='data')
+    .pc-form__field
       UiText.pc__text(size='large') Охлаждение
-      UiSelect(:items='cooller' v-model='data.cooller'  @input='test')
-    .pc__wrapper
-      UiText.pc__text(size='large') Материнская плата
-      UiSelect(:items='motherBoard' v-model='data.motherBoard')
-    .pc__wrapper
-      UiText.pc__text(size='large') Оперативная память
-      UiSelect(:items='ram' v-model='data.ram')
-    .pc__wrapper
-      UiText.pc__text(size='large') Видеокарта
-      UiSelect(:items='gpu' v-model='data.gpu')
-    .pc__wrapper
-      UiText.pc__text(size='large') Жёсткий диск
-      UiSelect(:items='hardDisc' v-model='data.hardDisc')
-    .pc__wrapper
-      UiText.pc__text(size='large') SSD диск
-      UiSelect(:items='ssd' v-model='data.ssd')
-    .pc__wrapper
-      UiText.pc__text(size='large') Корпус
-      UiSelect(:items='casePc' v-model='data.casePc')
-    .pc__wrapper
-      UiText.pc__text(size='large') Блок питания
-      UiSelect(:items='psu' v-model='data.psu')
+      UiSelect(:items='cooller'   @input='data')
+    .pc-form__field
+      UiText.pc-form__text(size='large') Материнская плата
+      UiSelect(:items='motherBoard')
+    .pc-form__field
+      UiText.pc-form__text(size='large') Оперативная память
+      UiSelect(:items='ram')
+    .pc-form__field
+      UiText.pc-form__text(size='large') Видеокарта
+      UiSelect(:items='gpu')
+    .pc-form__field
+      UiText.pc-form__text(size='large') Жёсткий диск
+      UiSelect(:items='hardDisc')
+    .pc-form__field
+      UiText.pc-form__text(size='large') SSD диск
+      UiSelect(:items='ssd')
+    .pc-form__field
+      UiText.pc-form__text(size='large') Корпус
+      UiSelect(:items='casePc')
+    .pc-form__field
+      UiText.pc-form__text(size='large') Блок питания
+      UiSelect(:items='psu')
 </template>
 
 <script lang="ts">
@@ -51,19 +51,10 @@ export default Vue.extend({
       },
     }
   },
-  mounted() {
-    this.$store.dispatch('cpu/getCpu')
-    this.$store.dispatch('cooller/getCooller')
-    this.$store.dispatch('motherboard/getMotherBoard')
-    this.$store.dispatch('ram/getRam')
-    this.$store.dispatch('gpu/getGpu')
-    this.$store.dispatch('hard-disc/getDisc')
-    this.$store.dispatch('ssd/getSsd')
-    this.$store.dispatch('case/getCase')
-    this.$store.dispatch('psu/getPsu')
-  },
+
   methods: {
-    test(val: any) {
+    // это было сделано чтобы принимать value из инпута,пока не дописал остальные потому что не знаю правильно ли я сделал
+    data(val: any) {
       this.data.cpu = val
       this.data.cooller = val
     }
@@ -104,15 +95,15 @@ export default Vue.extend({
 @import "~/styles/mixins.scss";
 .pc-form {
   margin-top: 20px;
-}
 
-.pc__wrapper {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 35px;
-}
+  &__field {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+  }
 
-.pc__text {
-  --text-margin-right: 35px;
+  &__text {
+    --text-margin-right: 35px;
+  }
 }
 </style>
