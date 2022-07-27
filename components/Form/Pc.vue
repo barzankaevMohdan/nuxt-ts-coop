@@ -4,35 +4,45 @@
   )
     .pc-form__field
       UiText.pc-form__text(size='large') Процессор
-      UiSelect(:items='cpu'  @input='data')
+      UiSelect(v-model='data.cpu' :options='cpu' placeholder="выберите")
+
     .pc-form__field
       UiText.pc__text(size='large') Охлаждение
-      UiSelect(:items='cooller'   @input='data')
+      UiSelect(v-model='data.cooller' :options='cooller' placeholder="выберите")
+
     .pc-form__field
       UiText.pc-form__text(size='large') Материнская плата
-      UiSelect(:items='motherBoard')
+      UiSelect(v-model='data.motherBoard' :options='motherBoard' placeholder="выберите")
+
     .pc-form__field
       UiText.pc-form__text(size='large') Оперативная память
-      UiSelect(:items='ram')
+      UiSelect(v-model='data.ram' :options='ram' placeholder="выберите")
+
     .pc-form__field
       UiText.pc-form__text(size='large') Видеокарта
-      UiSelect(:items='gpu')
+      UiSelect(v-model='data.gpu' :options='gpu' placeholder="выберите")
+
     .pc-form__field
       UiText.pc-form__text(size='large') Жёсткий диск
-      UiSelect(:items='hardDisc')
+      UiSelect(v-model='data.hardDisc' :options='hardDisc' placeholder="выберите")
+
     .pc-form__field
       UiText.pc-form__text(size='large') SSD диск
-      UiSelect(:items='ssd')
+      UiSelect(v-model='data.ssd' :options='ssd' placeholder="выберите")
+
     .pc-form__field
       UiText.pc-form__text(size='large') Корпус
-      UiSelect(:items='casePc')
+      UiSelect(v-model='data.casePc' :options='casePc' placeholder="выберите")
+
     .pc-form__field
       UiText.pc-form__text(size='large') Блок питания
-      UiSelect(:items='psu')
+      UiSelect(v-model='data.psu' :options='psu' placeholder="выберите")
+
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { Cooller, Cpu, Gpu, MotherBoard, Ram, HardDisc, Ssd, Case, Psu } from '~/types/pc/pc-interfaces';
 
 export default Vue.extend({
   name: 'PcForm',
@@ -51,41 +61,87 @@ export default Vue.extend({
       },
     }
   },
-
-  methods: {
-    // это было сделано чтобы принимать value из инпута,пока не дописал остальные потому что не знаю правильно ли я сделал
-    data(val: any) {
-      this.data.cpu = val
-      this.data.cooller = val
-    }
-  },
   computed: {
     cpu() {
-      return this.$store.getters['cpu/cpu']
+      const cpuList = this.$store.getters['cpu/cpu']
+      return cpuList.map((cpu: Cpu) => {
+        return {
+          label: cpu.name,
+          value: cpu.id
+        }
+      })
     },
     cooller() {
-      return this.$store.getters['cooller/cooller']
+      const coollerList = this.$store.getters['cooller/cooller']
+      return coollerList.map((cooller: Cooller) => {
+        return {
+          label: cooller.name,
+          value: cooller.id
+        }
+      })
     },
     motherBoard() {
-      return this.$store.getters['motherboard/motherBoard']
+      const motherBoardList = this.$store.getters['motherboard/motherBoard']
+      return motherBoardList.map((motherBoard: MotherBoard) => {
+        return {
+          label: motherBoard.name,
+          value: motherBoard.id
+        }
+      })
     },
     ram() {
-      return this.$store.getters['ram/ram']
+      const ramList = this.$store.getters['ram/ram']
+      return ramList.map((ram: Ram) => {
+        return {
+          label: ram.name,
+          value: ram.id
+        }
+      })
     },
     gpu() {
-      return this.$store.getters['gpu/gpu']
+      const gpuList = this.$store.getters['gpu/gpu']
+      return gpuList.map((gpu: Gpu) => {
+        return {
+          label: gpu.name,
+          value: gpu.id
+        }
+      })
     },
     hardDisc() {
-      return this.$store.getters['hard-disc/disc']
+      const hardDiscList = this.$store.getters['hard-disc/disc']
+      return hardDiscList.map((hardDisc: HardDisc) => {
+        return {
+          label: hardDisc.name,
+          value: hardDisc.id
+        }
+      })
     },
     ssd() {
-      return this.$store.getters['ssd/ssd']
+      const ssdList = this.$store.getters['ssd/ssd']
+      return ssdList.map((ssd: Ssd) => {
+        return {
+          label: ssd.name,
+          value: ssd.id
+        }
+      })
     },
     casePc() {
-      return this.$store.getters['case/case']
+      const casePcList = this.$store.getters['case/case']
+      return casePcList.map((casePc: Case) => {
+        return {
+          label: casePc.name,
+          value: casePc.id
+        }
+      })
     },
     psu() {
-      return this.$store.getters['psu/psu']
+      const psuList = this.$store.getters['psu/psu']
+      return psuList.map((psu: Psu) => {
+        return {
+          label: psu.name,
+          value: psu.id
+        }
+      })
     },
   },
 })
@@ -94,11 +150,12 @@ export default Vue.extend({
 <style scoped lang='scss'>
 @import "~/styles/mixins.scss";
 .pc-form {
+  width: 100%;
   margin-top: 20px;
 
   &__field {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 35px;
   }
 

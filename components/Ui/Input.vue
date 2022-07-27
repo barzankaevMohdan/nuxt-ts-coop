@@ -16,6 +16,12 @@
           'text-input__input_with-two-btn': hasTwoBtnSlot,
           'text-input__input_password': type === 'password',
         }"
+        :value="value"
+        :placeholder="placeholder"
+        :required="required"
+        :disabled="disabled"
+        :name="name"
+        :type="type"
         @input="onInput"
         @keyup.enter="$emit('handleKeypress')"
         v-bind="$attrs"
@@ -37,6 +43,31 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'Input',
   props: {
+    value: {
+      type: [String, Number],
+      required: false,
+      default: null,
+    },
+    placeholder: {
+      type: String,
+      required: false,
+    },
+    required: {
+      type: Boolean,
+      required: false,
+    },
+    disabled: {
+      type: Boolean,
+      required: false,
+    },
+    name: {
+      type: String,
+      required: false,
+    },
+    type: {
+      type: String,
+      default: 'text',
+    },
     error: {
       type: String,
       default: '',

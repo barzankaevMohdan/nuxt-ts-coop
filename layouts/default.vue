@@ -1,5 +1,6 @@
 <template lang='pug'>
   .main
+    LayoutsHeader
     Nuxt
     ModalsAllMainModalsHere
 </template>
