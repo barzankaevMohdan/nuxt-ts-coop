@@ -5,7 +5,7 @@ import { Cpu } from '~/types/pc/pc-interfaces'
 export type RootState = ReturnType<typeof state>
 
 export const state = () => ({
-  cpu: [] as Cpu[]
+  cpu: [] as Cpu[],
 })
 
 export const mutations: MutationTree<RootState> = {
@@ -27,4 +27,5 @@ export const actions: ActionTree<RootState, RootState> = {
 
 export const getters: GetterTree<RootState, RootState> = {
   cpu: (state) => state.cpu,
+  cpuById:(state) => (id: string | number) => state.cpu.find(el => el.id === id)
 }

@@ -24,12 +24,16 @@ export type RootState = ReturnType<typeof state>
 
 export const state = () => ({
   pc: [] as Pc[],
+  buildPc: {}
 })
 
 export const mutations: MutationTree<RootState> = {
   addPc(state, data) {
     state.pc = data
   },
+  addBuildPc(state, data) {
+    state.buildPc = data
+  }
 }
 
 export const actions: ActionTree<RootState, RootState> = {
@@ -40,10 +44,14 @@ export const actions: ActionTree<RootState, RootState> = {
         commit('addPc', data.data)
        })
     })
+  },
+  getBuildPC({commit}) {
+
   }
 }
 
 export const getters: GetterTree<RootState, RootState> = {
   pc: (state) => state.pc,
+  newPc: (state) => state.buildPc,
   id: (state) => (id: string|number) => state.pc.find(el => el.id === id)
 }

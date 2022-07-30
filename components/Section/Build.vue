@@ -17,16 +17,7 @@
           UiText(size='big') Собрать ПК - игровой, домашний, офисный, для работы с графикой. Гибкая модификация ПК.
     .pc-build__block
       FormPc
-      //ТУТ ДОЛЖЕН БЫТЬ UiPc
-      //- UiPc(:pc='тут данные которые ты собрал из формы, в форме на каждое изменение отправляешь в стор, и из стор суешь сюда')
-
-      .pc-build__block-content
-        img.pc-build__img(src='~/assets/pc/pc.png')
-        .pc-build__block-banner
-          UiText(size='big') 11110
-          SvgIcon.pc-build__svg(name="rub")
-        UiButton Купить
-
+      UiPcCard.pc-build__card( :pc='pc')
 </template>
 
 <script lang="ts">
@@ -34,6 +25,11 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Build',
+  computed: {
+    pc() {
+      return this.$store.getters['pc/newPc']
+    }
+  },
 })
 </script>
 
@@ -106,6 +102,10 @@ export default Vue.extend({
     display: flex;
     align-items: center;
     margin-top: 35px;
+  }
+
+  &__card {
+    margin-left: 75px;
   }
 }
 </style>

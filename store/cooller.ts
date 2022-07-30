@@ -27,4 +27,5 @@ export const actions: ActionTree<RootState, RootState> = {
 
 export const getters: GetterTree<RootState, RootState> = {
   cooller: (state) => state.cooller,
+  coollerById:(state) => (id: string | number) => state.cooller.find(el => el.id === id)
 }

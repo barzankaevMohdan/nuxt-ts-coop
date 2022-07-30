@@ -5,7 +5,8 @@
     "type": "HDD",
     "memory": "4000Гб",
     "buffered_memory": "256 МБ",
-    "conection": "SATA 6Gbit/s"
+    "conection": "SATA 6Gbit/s",
+    "price": "5000"
   },
   {
     "id": "2",
@@ -13,6 +14,7 @@
     "type": "HDD",
     "memory": "8000 Гб",
     "buffered_memory": "256 МБ",
-    "conection": "SATA 6Gbit/s"
+    "conection": "SATA 6Gbit/s",
+    "price": "5000"
   }
 ]

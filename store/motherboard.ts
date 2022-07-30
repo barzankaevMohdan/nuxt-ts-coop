@@ -27,4 +27,5 @@ export const actions: ActionTree<RootState, RootState> = {
 
 export const getters: GetterTree<RootState, RootState> = {
   motherBoard: (state) => state.motherBoard,
+  motherBoardById:(state) => (id: string | number) => state.motherBoard.find(el => el.id === id)
 }

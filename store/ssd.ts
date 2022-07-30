@@ -27,4 +27,5 @@ export const actions: ActionTree<RootState, RootState> = {
 
 export const getters: GetterTree<RootState, RootState> = {
   ssd: (state) => state.ssd,
+  ssdById:(state) => (id: string | number) => state.ssd.find(el => el.id === id)
 }

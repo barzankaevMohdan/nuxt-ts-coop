@@ -27,4 +27,5 @@ export const actions: ActionTree<RootState, RootState> = {
 
 export const getters: GetterTree<RootState, RootState> = {
   disc: (state) => state.disc,
+  discById:(state) => (id: string | number) => state.disc.find(el => el.id === id)
 }

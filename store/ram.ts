@@ -27,4 +27,5 @@ export const actions: ActionTree<RootState, RootState> = {
 
 export const getters: GetterTree<RootState, RootState> = {
   ram: (state) => state.ram,
+  ramById:(state) => (id: string | number) => state.ram.find(el => el.id === id)
 }

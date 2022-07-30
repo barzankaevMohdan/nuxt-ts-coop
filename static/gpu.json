@@ -6,7 +6,8 @@
     "memory_type": "GDDR6X",
     "psu": "1000vt",
     "rgb": "yes",
-    "year": "2020"
+    "year": "2020",
+    "price": "145000"
   },
   {
     "id": "2",
@@ -15,7 +16,8 @@
     "memory_type": "GDDR6X",
     "psu": "1000vt",
     "rgb": "yes",
-    "year": "2020"
+    "year": "2020",
+    "price": "85000"
   }
 ]
 

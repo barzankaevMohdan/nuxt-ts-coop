@@ -1,34 +1,61 @@
 <template lang="pug">
   .card
     img.card__img(src='../../assets/pc/pc.png')
-    UiHeadline.card__title(tag='h4') {{pc.name}}
+    UiHeadline.card__title( tag='h4') {{pc.name}}
+
     .card__block
       UiHeadline.card__subtitle(tag='h4') {{pc.price}}
       SvgIcon.card__svg(name="rub")
     .card__action
       UiButton.card__btn Купить
-      UiButton(theme='outline' @click='toDetail(pc.id)') Подробнее
+      UiButton(theme='outline' @click='toDetail(pc.id)' v-if='pc.id') Подробнее
     p.card__description {{pc.description}}
     .card__components
       .card__info
           UiText.card__components-title(size='small') Видео карта
-          UiText.card__components-subtitle {{pc.gpu.name}}
+          UiText.card__components-subtitle(v-if='pc.gpu') {{pc.gpu.name}}
+          template(v-else)
+            UiText.card__components-subtitle Не выбрано
+
           UiText.card__components-title(size='small') Процессор
-          UiText.card__components-subtitle {{pc.cpu.name}}
+          UiText.card__components-subtitle(v-if='pc.cpu') {{pc.cpu.name}}
+          template(v-else)
+           UiText.card__components-subtitle Не выбрано
+
           UiText.card__components-title(size='small') Охлаждение
-          UiText.card__components-subtitle {{pc.cooller.name}}
+          UiText.card__components-subtitle(v-if='pc.cooller') {{pc.cooller.name}}
+          template(v-else)
+           UiText.card__components-subtitle Не выбрано
+
           UiText.card__components-title(size='small') Оперативная память
-          UiText.card__components-subtitle {{pc.ram.name}}
+          UiText.card__components-subtitle(v-if='pc.ram') {{pc.ram.name}}
+          template(v-else)
+           UiText.card__components-subtitle Не выбрано
+
           UiText.card__components-title(size='small') Материнская плата
-          UiText.card__components-subtitle {{pc.motherboard.name}}
+          UiText.card__components-subtitle(v-if='pc.motherboard') {{pc.motherboard.name}}
+          template(v-else)
+            UiText.card__components-subtitle Не выбрано
+
           UiText.card__components-title(size='small') Жёсткий диск
-          UiText.card__components-subtitle {{pc.hard_disc.name}}
+          UiText.card__components-subtitle(v-if='pc.hard_disc') {{pc.hard_disc.name}}
+          template(v-else)
+           UiText.card__components-subtitle Не выбрано
+
           UiText.card__components-title(size='small') Диск SSD
-          UiText.card__components-subtitle {{pc.ssd.name}}
+          UiText.card__components-subtitle(v-if='pc.ssd') {{pc.ssd.name}}
+          template(v-else)
+           UiText.card__components-subtitle Не выбрано
+
           UiText.card__components-title(size='small') Блок питания
-          UiText.card__components-subtitle {{pc.psu.name}}
+          UiText.card__components-subtitle(v-if='pc.psu') {{pc.psu.name}}
+          template(v-else)
+           UiText.card__components-subtitle Не выбрано
+
           UiText.card__components-title(size='small') Корпус
-          UiText.card__components-subtitle {{pc.case.name}}
+          UiText.card__components-subtitle(v-if='pc.case') {{pc.case.name}}
+          template(v-else)
+           UiText.card__components-subtitle Не выбрано
 </template>
 
 <script>
@@ -42,6 +69,11 @@ export default {
   methods: {
     toDetail(id) {
       this.$router.push(`/detail/${id}`)
+    }
+  },
+  computed: {
+    cpu() {
+      return this.pc.cooller?.name
     }
   }
 }
