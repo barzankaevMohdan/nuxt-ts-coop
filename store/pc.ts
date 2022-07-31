@@ -45,9 +45,6 @@ export const actions: ActionTree<RootState, RootState> = {
        })
     })
   },
-  getBuildPC({commit}) {
-
-  }
 }
 
 export const getters: GetterTree<RootState, RootState> = {

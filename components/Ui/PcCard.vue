@@ -13,49 +13,23 @@
     .card__components
       .card__info
           UiText.card__components-title(size='small') Видео карта
-          UiText.card__components-subtitle(v-if='pc.gpu') {{pc.gpu.name}}
-          template(v-else)
-            UiText.card__components-subtitle Не выбрано
-
+          UiText.card__components-subtitle {{gpuName || 'Не выбрано'}}
           UiText.card__components-title(size='small') Процессор
-          UiText.card__components-subtitle(v-if='pc.cpu') {{pc.cpu.name}}
-          template(v-else)
-           UiText.card__components-subtitle Не выбрано
-
+          UiText.card__components-subtitle {{cpuName || 'Не выбрано'}}
           UiText.card__components-title(size='small') Охлаждение
-          UiText.card__components-subtitle(v-if='pc.cooller') {{pc.cooller.name}}
-          template(v-else)
-           UiText.card__components-subtitle Не выбрано
-
+          UiText.card__components-subtitle {{coollerName || 'Не выбрано'}}
           UiText.card__components-title(size='small') Оперативная память
-          UiText.card__components-subtitle(v-if='pc.ram') {{pc.ram.name}}
-          template(v-else)
-           UiText.card__components-subtitle Не выбрано
-
+          UiText.card__components-subtitle {{ramName || 'Не выбрано'}}
           UiText.card__components-title(size='small') Материнская плата
-          UiText.card__components-subtitle(v-if='pc.motherboard') {{pc.motherboard.name}}
-          template(v-else)
-            UiText.card__components-subtitle Не выбрано
-
+          UiText.card__components-subtitle {{motherBoardName || 'Не выбрано'}}
           UiText.card__components-title(size='small') Жёсткий диск
-          UiText.card__components-subtitle(v-if='pc.hard_disc') {{pc.hard_disc.name}}
-          template(v-else)
-           UiText.card__components-subtitle Не выбрано
-
+          UiText.card__components-subtitle {{discName || 'Не выбрано'}}
           UiText.card__components-title(size='small') Диск SSD
-          UiText.card__components-subtitle(v-if='pc.ssd') {{pc.ssd.name}}
-          template(v-else)
-           UiText.card__components-subtitle Не выбрано
-
+          UiText.card__components-subtitle {{ssdName || 'Не выбрано'}}
           UiText.card__components-title(size='small') Блок питания
-          UiText.card__components-subtitle(v-if='pc.psu') {{pc.psu.name}}
-          template(v-else)
-           UiText.card__components-subtitle Не выбрано
-
+          UiText.card__components-subtitle {{psuName || 'Не выбрано'}}
           UiText.card__components-title(size='small') Корпус
-          UiText.card__components-subtitle(v-if='pc.case') {{pc.case.name}}
-          template(v-else)
-           UiText.card__components-subtitle Не выбрано
+          UiText.card__components-subtitle {{casename || 'Не выбрано'}}
 </template>
 
 <script>
@@ -72,8 +46,32 @@ export default {
     }
   },
   computed: {
-    cpu() {
+    gpuName() {
+      return this.pc.gpu?.name
+    },
+    cpuName() {
+      return this.pc.cpu?.name
+    },
+    coollerName() {
       return this.pc.cooller?.name
+    },
+    ramName() {
+      return this.pc.ram?.name
+    },
+    motherBoardName() {
+      return this.pc.motherboard?.name
+    },
+    discName() {
+      return this.pc.hard_disc?.name
+    },
+    ssdName() {
+      return this.pc.ssd?.name
+    },
+    psuName() {
+      return this.pc.psu?.name
+    },
+    casename() {
+      return this.pc.case?.name
     }
   }
 }

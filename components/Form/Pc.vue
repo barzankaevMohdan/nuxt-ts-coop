@@ -148,30 +148,29 @@ export default Vue.extend({
     data: {
       deep: true,
       handler(newValue, oldValue) {
-       const cpu = this.$store.getters['cpu/cpuById'](newValue.cpu?.value)
-       const cooller = this.$store.getters['cooller/coollerById'](newValue.cooller?.value)
-       const motherBoard = this.$store.getters['motherboard/motherBoardById'](newValue.motherBoard?.value)
-       const ram = this.$store.getters['ram/ramById'](newValue.ram?.value)
-       const gpu = this.$store.getters['gpu/gpuById'](newValue.gpu?.value)
-       const hardDisc = this.$store.getters['hard-disc/discById'] (newValue.hardDisc?.value)
-       const ssd = this.$store.getters['ssd/ssdById'](newValue.ssd?.value)
-       const casePc = this.$store.getters['case/caseById'](newValue.casePc?.value)
-       const psu = this.$store.getters['psu/psuById'](newValue.psu?.value)
 
-       const price = Number(cpu?.price || 0) + Number(cooller?.price || 0) + Number(motherBoard?.price || 0)+ Number(ram?.price || 0) + Number(gpu?.price || 0)+ Number(hardDisc?.price || 0) + Number(ssd?.price || 0) + Number(casePc?.price || 0) + Number(psu?.price || 0)
+
 
        const data = {
-        cpu: cpu,
-        cooller: cooller,
-        motherboard: motherBoard,
-        ram: ram,
-        gpu: gpu,
-        hard_disc: hardDisc,
-        ssd: ssd,
-        casePc: casePc,
-        psu: psu,
-        price: price
+        cpu: this.$store.getters['cpu/cpuById'](newValue.cpu?.value),
+        cooller: this.$store.getters['cooller/coollerById'](newValue.cooller?.value),
+        motherboard: this.$store.getters['motherboard/motherBoardById'](newValue.motherBoard?.value),
+        ram: this.$store.getters['ram/ramById'](newValue.ram?.value),
+        gpu: this.$store.getters['gpu/gpuById'](newValue.gpu?.value),
+        hard_disc: this.$store.getters['hard-disc/discById'] (newValue.hardDisc?.value),
+        ssd: this.$store.getters['ssd/ssdById'](newValue.ssd?.value),
+        casePc: this.$store.getters['case/caseById'](newValue.casePc?.value),
+        psu: this.$store.getters['psu/psuById'](newValue.psu?.value),
+        price: 0
        }
+
+        let price = 0
+
+        Object.values(data).forEach(item => {
+          price += Number(item?.price || 0)
+        })
+
+        data.price = price
 
         this.$store.commit('pc/addBuildPc', data)
 
