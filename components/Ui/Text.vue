@@ -32,6 +32,7 @@ export default {
   --text-margin-vertical: 0;
   --text-margin-horizontal: 0;
   --text-margin-bottom: 0;
+  --text-margin-right: 0;
 
   /* Цвета */
   --text-color: var(--main-light);
@@ -48,6 +49,8 @@ export default {
   padding: var(--text-padding-vertical) var(--text-padding-horizontal);
   margin: var(--text-margin-vertical) var(--text-margin-horizontal);
   margin-bottom: var(--text-margin-bottom);
+  margin-right: var(--text-margin-right);
+
 
   &_size {
 

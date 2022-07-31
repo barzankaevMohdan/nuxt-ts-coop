@@ -6,7 +6,8 @@
     "socket": "LGA 1200",
     "processor_cores": "8",
     "core_speed": "3800 МГц",
-    "core": "Comet Lake"
+    "core": "Comet Lake",
+    "price": "35000"
   },
   {
     "id": "2",
@@ -15,6 +16,7 @@
     "socket": "AM4",
     "processor_cores": "12",
     "core_speed": "3700 МГц",
-    "core": "Vermeer"
+    "core": "Vermeer",
+    "price": "35000"
   }
 ]

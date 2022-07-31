@@ -8,7 +8,8 @@
     "sound": "8-channel (7.1)",
     "socket": "1200",
     "expansion_slots": "PCI-E 4.0 x16, PCI-E 3.0 x16, 3 x PCI-E x1, 2 x PCI-E M.2",
-    "slots_types": "- Key M, 2242/2260/2280/22110 (PCIe 4.0 x4);- Key M, 2242/2260/2280/22110 (PCIe 3.0 x4 & SATA)"
+    "slots_types": "- Key M, 2242/2260/2280/22110 (PCIe 4.0 x4);- Key M, 2242/2260/2280/22110 (PCIe 3.0 x4 & SATA)",
+    "price": "35000"
   },
   {
     "id": "2",
@@ -19,6 +20,7 @@
     "sound": "8-channel (7.1)",
     "socket": "AM4",
     "expansion_slots": "2 x PCI-E 4.0 x16, 3 x PCI-E x1, PCI-E M.2",
-    "slots_types": "2 x PCI-E 4.0 x16, 3 x PCI-E x1, PCI-E M.2"
+    "slots_types": "2 x PCI-E 4.0 x16, 3 x PCI-E x1, PCI-E M.2",
+    "price": "35000"
   }
 ]

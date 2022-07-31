@@ -8,7 +8,8 @@
     "flash_memory_type": "TLC 3D NAND",
     "interface_max_speed": "600 МБ/с",
     "reading_speed": "550 Мб/сек",
-    "recording_speed": "520 Мб/сек"
+    "recording_speed": "520 Мб/сек",
+    "price": "5000"
   },
   {
     "id": "2",
@@ -19,6 +20,7 @@
     "flash_memory_type": "TLC",
     "interface_max_speed": "",
     "reading_speed": "5000 Мб/сек",
-    "recording_speed": "2500 Мб/сек"
+    "recording_speed": "2500 Мб/сек",
+    "price": "5000"
   }
 ]

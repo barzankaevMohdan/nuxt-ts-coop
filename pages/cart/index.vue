@@ -1,6 +1,5 @@
 <template lang='pug'>
-   LayoutsPageContent
-    LayoutsHeader
+  LayoutsPageContent
     SectionCart
 </template>
 
