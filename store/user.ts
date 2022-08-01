@@ -23,8 +23,8 @@ export interface iRecoveryData {
 export type RootState = ReturnType<typeof state>
 
 export const state = () => ({
-  user: {} as IUser,
-  token: localStorage.getItem('token'),
+  user: {name:'halid'} as IUser,
+  token: true,
   isLoading: false,
 })
 

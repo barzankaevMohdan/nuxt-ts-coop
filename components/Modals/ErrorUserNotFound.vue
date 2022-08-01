@@ -3,7 +3,12 @@
     name='error-user-not-found'
     @beforeOpen='initData'
   )
-    
+    template(v-slot:title) Пользователь не найден!
+    template(v-slot:default) Пользователь с почтой {{data.login}} не найден
+    template(v-slot:footer)
+      UiButton(
+       @click.prevent='goToRegistration'
+      ) Зарегистрироваться
 </template>
 
 <script lang="ts">
@@ -22,8 +27,12 @@ export default Vue.extend({
   },
   methods: {
     initData(event: any) {
-      console.log(event);
+      this.data.login = event.ref.params
     },
+    goToRegistration(): void {
+      this.$vfm.hide('user-registration', this.data.login)
+      this.$vfm.show('error-user-not-found')
+    }
   },
 })
 </script>

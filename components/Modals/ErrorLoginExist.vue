@@ -3,7 +3,12 @@
     name='error-login-exist'
     @beforeOpen='initData'
   )
-    
+    template(v-slot:title) Пользователь уже существует!
+    template(v-slot:default) Пользователь {{data.login}} уже существует
+    template(v-slot:footer)
+      UiButton(
+       @click.prevent='goToLogin'
+      ) Войти
 </template>
 
 <script lang="ts">
@@ -22,8 +27,12 @@ export default Vue.extend({
   },
   methods: {
     initData(event: any) {
-      console.log(event);
+      this.data.login = event.ref.params
     },
+    goToLogin(): void {
+      this.$vfm.hide('user-login', this.data.login)
+      this.$vfm.show('error-login-exist')
+    }
   },
 })
 </script>

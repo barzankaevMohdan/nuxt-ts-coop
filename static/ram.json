@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "name": "8Гб Kingston HyperX Fury RGB",
+    "form_factor": "DIMM",
+    "memory_type": "DDR-4",
+    "clock_rate": "3600 МГц",
+    "throughput": "28800 Мб/с",
+    "supply_voltage": "1.35",
+    "price": "15000"
+  },
+  {
+    "id": "2",
+    "name": "16Гб Kingston HyperX Fury RGB",
+    "form_factor": "DIMM",
+    "memory_type": "DDR-4",
+    "clock_rate": "3600 МГц",
+    "throughput": "28800 Мб/с",
+    "supply_voltage": "1.35",
+    "price": "15000"
+  }
+]

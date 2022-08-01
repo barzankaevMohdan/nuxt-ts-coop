@@ -3,8 +3,8 @@
     @submit.prevent='submit'
   )
     UiInput(
-      v-model.trim='data.email'
-      :error='errors["email"]'
+      v-model.trim='data.login'
+      :error='errors["login"]'
       placeholder="Логин"
     )
     UiInput.auth-form__field(
@@ -29,14 +29,13 @@
 <script lang="ts">
 import Vue from 'vue'
 import formsFunctions from '~/mixins/formsFunctions'
-import {IUserData} from '~/store/user'
 
 export default Vue.extend({
   name: 'LoginForm',
   data() {
     return {
       data: {
-        email: '',
+        login: '',
         password: '',
       },
     }
@@ -46,29 +45,29 @@ export default Vue.extend({
     // login functions
     async componentHandler(): Promise<void> {
       const userData = {
-        email: this.data.email.toLowerCase().trim(),
+        email: this.data.login.toLowerCase().trim(),
         password: this.data.password,
       }
 
       await this.$store.dispatch('user/logIn', userData)
-
       this.$vfm.hide('authenticate')
     },
     forgotYourPassword(): void {
       this.$vfm.hide('authenticate')
-      this.$vfm.show('password-forgot', this.data.email)
+      this.$vfm.show('password-forgot', this.data.login)
+      this.$store.dispatch('cooller/getCooller')
     },
   },
   computed: {
     rules() {
       return {
-        email: 'required|email',
+        login: 'required|email',
         password: 'required|min:6',
       }
     },
     attributeNames() {
       return {
-        email: 'логин',
+        login: 'логин',
         password: 'пароль',
       }
     },
@@ -78,16 +77,13 @@ export default Vue.extend({
 
 <style scoped lang='scss'>
 @import "~/styles/mixins.scss";
-
 .auth-form {
   &__field {
     margin-top: 20px;
   }
-
   &__footer {
     margin-top: 30px;
   }
-
   &__error {
     display: block;
     font-size: var(--main-input-label-size);

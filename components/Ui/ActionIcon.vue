@@ -14,7 +14,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'UiActionIcon',
+  name: 'ActionIcon',
   props: {
     disabled: {
       type: Boolean,

@@ -41,7 +41,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'UiInput',
+  name: 'Input',
   props: {
     value: {
       type: [String, Number],
@@ -96,7 +96,7 @@ export default Vue.extend({
 </script>
 <style lang="scss">
 :root {
-  /* Размеры кнопки */
+  /* Размеры инпута */
   --text-input-vertical-padding: var(--main-input-vertical-padding);
   --text-input-horizontal-padding: var(--main-input-horizontal-padding);
   --text-input-border-width: 1px;
@@ -104,7 +104,7 @@ export default Vue.extend({
   --text-input-text-size: var(--main-size);
   --text-input-border-radius: var(--main-input-radius);
 
-  /* Цвета кнопки */
+  /* Цвета инпута */
   --text-input-label-base-color: var(--main-light);
   --text-input-label-error-color: var(--main-danger-color);
   --text-input-label-correct-color: var(--main-success-color);

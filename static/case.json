@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Cougar Conquer",
+    "form_factor": "mATX / ATX",
+    "dimension_type": "Midi-Tower",
+    "water_cooling_system": "есть",
+    "cpu_cooller_maximum_height": "170 мм",
+    "gpu_maximum_length": "350 мм",
+    "price": "45000",
+    "overall_dimensions": "260x535x454 мм",
+    "front_panel_connectors": "USB 3.0 x2, наушники, микрофон"
+  },
+  {
+    "id": "2",
+    "name": "Deepcool Matrexx 70 ADD-RGB 3F Black",
+    "form_factor": "ATX, mATX, EATX, Mini-ITX",
+    "dimension_type": "Midi-Tower",
+    "water_cooling_system": "есть",
+    "cpu_cooller_maximum_height": "170 мм",
+    "price": "45000",
+    "gpu_maximum_length": "380 мм",
+    "overall_dimensions": "228x492x475 мм",
+    "front_panel_connectors": "USB x3, включая USB 3.0 x2, наушники, микрофон"
+  }
+]

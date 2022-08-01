@@ -1,0 +1,217 @@
+[
+  {
+    "id": "1",
+    "name": "WHITE MASTER 5000",
+    "price": "350000",
+    "description": "Лучшее решение для угнетения черных npc в невероятно графических играх",
+    "picture": "../assets/pc/pc.png",
+    "gpu":  {
+      "id": "1",
+      "name": "Geforce RTX 3090 TI 24Гб",
+      "memory": "24Гб",
+      "memory-type": "GDDR6X",
+      "psu": "1000vt",
+      "rgb": "yes",
+      "year": "2020",
+      "price": "145000"
+    },
+    "cpu": {
+      "id": "1",
+      "name": "Intel Core i7-10700KF",
+      "L3_cache": "12Мб",
+      "socket": "LGA 1200",
+      "processor_cores": "8",
+      "core_speed": "3800 МГц",
+      "core": "Comet Lake",
+      "price": "35000"
+    },
+    "ram": {
+      "id": "1",
+      "name": "8Гб Kingston HyperX Fury RGB",
+      "form_factor": "DIMM",
+      "memory_type": "DDR-4",
+      "clock_rate": "3600 МГц",
+      "throughput": "28800 Мб/с",
+      "supply_voltage": "1.35",
+      "price": "15000"
+    },
+    "ssd": {
+      "id": "1",
+      "name": "480 Гб Kingston M.2",
+      "memory": "480 Гб",
+      "form_factor": "2280",
+      "connector_M.2": "есть",
+      "flash-memory_type": "TLC 3D NAND",
+      "interface_max_speed": "600 МБ/с",
+      "reading_speed": "550 Мб/сек",
+      "recording_speed": "520 Мб/сек",
+      "price": "5000"
+    },
+    "cooller": {
+      "id": "1",
+      "name": "ID-COOLING AURAFLOW X 360",
+      "radiator_material": "алюминий",
+      "cooller_height": "95",
+      "rotation_speed": "500 - 1800 об/мин",
+      "airflow": "76.52 CFM",
+      "noise_level": "17.6 - 31.3 дБ",
+      "bearing_type": "гидродинамический",
+      "light": "отсутствует",
+      "uptime": "50000 ч",
+      "weght": "1693 г",
+      "waterblock_material": "медь",
+      "price": "5000"
+    },
+    "hard_disc": {
+      "id": "1",
+      "name": "4 Тб Seagate",
+      "type": "HDD",
+      "memory": "4000Гб",
+      "buffered memory": "256 МБ",
+      "conection": "SATA 6Gbit/s",
+      "price": "5000"
+    },
+    "motherboard": {
+      "id": "1",
+      "name": "ASUS TUF GAMING B560-PLUS WIFI",
+      "form_factor": "4",
+      "slots": "4",
+      "chipset": "Intel B560",
+      "sound": "8-channel (7.1)",
+      "socket": "1200",
+      "expansion_slots": "PCI-E 4.0 x16, PCI-E 3.0 x16, 3 x PCI-E x1, 2 x PCI-E M.2",
+      "slots_types": "- Key M, 2242/2260/2280/22110 (PCIe 4.0 x4);- Key M, 2242/2260/2280/22110 (PCIe 3.0 x4 & SATA)",
+      "price": "35000"
+    },
+    "case": {
+      "id": "1",
+      "name": "Cougar Conquer",
+      "form_factor": "mATX / ATX",
+      "dimension_type": "Midi-Tower",
+      "water_cooling_system": "есть",
+      "cpu_cooller_maximum_height": "170 мм",
+      "gpu_maximum_length": "350 мм",
+      "overall_dimensions": "260x535x454 мм",
+      "front_panel_connectors": "USB 3.0 x2, наушники, микрофон",
+      "price": "45000"
+    },
+    "psu": {
+      "id": "1",
+      "name": "Corsair HX1200",
+      "power" : "1200 Вт",
+      "form_factor": "ATX",
+      "protection_technology": "OPP, OVP, OTP, UVP, SCP",
+      "cooling_system": "полупассивная",
+      "maximum_noise_level": "25 дБа",
+      "pfc": "активный",
+      "price": "25000"
+    }
+  },
+  {
+    "id": "2",
+    "name": "WHITE MASTER 8000",
+    "price": "550000",
+    "description": "Лучшее решение для угнетения черных npc в невероятно графических играх",
+    "picture": "../assets/pc/pc.png",
+    "gpu":  {
+      "id": "2",
+      "name": "MSI GEFORCE RTX VENTUS 3080 10 Гб",
+      "memory": "10Гб",
+      "memory-type": "GDDR6X",
+      "psu": "1000vt",
+      "rgb": "yes",
+      "year": "2020",
+      "price": "85000"
+    },
+    "cpu": {
+      "id": "2",
+      "name": "AMD Ryzen 9 5900X",
+      "L3_cache": "64Мб",
+      "socket": "AM4",
+      "processor_cores": "12",
+      "core_speed": "3700 МГц",
+      "core": "Vermeer",
+      "price": "35000"
+    },
+    "ram": {
+      "id": "2",
+      "name": "16Гб Kingston HyperX Fury RGB",
+      "form_factor": "DIMM",
+      "memory_type": "DDR-4",
+      "clock_rate": "3600 МГц",
+      "throughput": "28800 Мб/с",
+      "supply_voltage": "1.35",
+      "price": "15000"
+    },
+    "ssd": {
+      "id": "2",
+      "name": "500 Гб Gigabyte Aorus",
+      "memory": "500 Гб",
+      "form_factor": "M.2",
+      "connector_M.2": "",
+      "flash-memory_type": "TLC",
+      "interface_max_speed": "",
+      "reading_speed": "5000 Мб/сек",
+      "recording_speed": "2500 Мб/сек",
+      "price": "5000"
+    },
+    "cooller": {
+      "id": "2",
+      "name": "NZXT Kraken X73",
+      "radiator_material": "алюминий",
+      "cooller_height": "50",
+      "rotation_speed": "500 - 2000 об/мин",
+      "noise_level": "21 - 36 дБ",
+      "bearing_type": "",
+      "light": "",
+      "uptime": "",
+      "weght": "1290 г",
+      "waterblock_material": "медь",
+      "price": "5000"
+    },
+    "hard_disc": {
+      "id": "2",
+      "name": "10 Тб Seagate IRONWOLF",
+      "type": "HDD",
+      "memory": "8000 Гб",
+      "buffered memory": "256 МБ",
+      "conection": "SATA 6Gbit/s",
+      "price": "5000"
+    },
+    "motherboard": {
+      "id": "2",
+      "name": "ASUS TUF GAMING X570-PLUS",
+      "form_factor": "4",
+      "slots": "4",
+      "chipset": "AMD TRX40",
+      "sound": "8-channel (7.1)",
+      "socket": "AM4",
+      "expansion_slots": "2 x PCI-E 4.0 x16, 3 x PCI-E x1, PCI-E M.2",
+      "slots_types": "2 x PCI-E 4.0 x16, 3 x PCI-E x1, PCI-E M.2",
+      "price": "35000"
+    },
+    "case": {
+      "id": "2",
+      "name": "Deepcool Matrexx 70 ADD-RGB 3F Black",
+      "form_factor": "ATX, mATX, EATX, Mini-ITX",
+      "dimension_type": "Midi-Tower",
+      "water_cooling_system": "есть",
+      "cpu_cooller_maximum_height": "170 мм",
+      "gpu_maximum_length": "380 мм",
+      "overall_dimensions": "228x492x475 мм",
+      "front_panel_connectors": "USB x3, включая USB 3.0 x2, наушники, микрофон",
+      "price": "45000"
+    },
+    "psu": {
+      "id": "2",
+      "name": "Corsair HX1000",
+      "power" : "1000 Вт",
+      "form_factor": "ATX",
+      "protection_technology": "OPP, OVP, OTP, UVP, SCP",
+      "cooling_system": "полупассивная",
+      "maximum_noise_level": "25 дБа",
+      "pfc": "активный",
+      "price": "25000"
+    }
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1",
+    "name": "Corsair HX1200",
+    "power" : "1200 Вт",
+    "form_factor": "ATX",
+    "protection_technology": "OPP, OVP, OTP, UVP, SCP",
+    "cooling_system": "полупассивная",
+    "maximum_noise_level": "25 дБа",
+    "pfc": "активный",
+    "price": "25000"
+  },
+  {
+    "id": "2",
+    "name": "Corsair HX1000",
+    "power" : "1000 Вт",
+    "form_factor": "ATX",
+    "protection_technology": "OPP, OVP, OTP, UVP, SCP",
+    "cooling_system": "полупассивная",
+    "maximum_noise_level": "25 дБа",
+    "pfc": "активный",
+    "price": "25000"
+  }
+]

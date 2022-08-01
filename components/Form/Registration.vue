@@ -78,7 +78,6 @@ export default Vue.extend({
         name: `${this.data.name} ${this.data.last_name}`,
         password: this.data.password,
       }
-
       await this.$store.dispatch('user/registration', userData)
     },
     showPassword(): void {
