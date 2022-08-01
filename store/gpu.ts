@@ -50,5 +50,6 @@ export const actions: ActionTree<RootState, RootState> = {
 }
 
 export const getters: GetterTree<RootState, RootState> = {
-  case: (state) => state.gpu,
+  gpu: (state) => state.gpu,
+  gpuById:(state) => (id: string | number) => state.gpu.find(el => el.id === id)
 }

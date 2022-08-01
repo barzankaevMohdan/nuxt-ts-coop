@@ -12,7 +12,8 @@
       "memory-type": "GDDR6X",
       "psu": "1000vt",
       "rgb": "yes",
-      "year": "2020"
+      "year": "2020",
+      "price": "145000"
     },
     "cpu": {
       "id": "1",
@@ -21,7 +22,8 @@
       "socket": "LGA 1200",
       "processor_cores": "8",
       "core_speed": "3800 МГц",
-      "core": "Comet Lake"
+      "core": "Comet Lake",
+      "price": "35000"
     },
     "ram": {
       "id": "1",
@@ -30,7 +32,8 @@
       "memory_type": "DDR-4",
       "clock_rate": "3600 МГц",
       "throughput": "28800 Мб/с",
-      "supply_voltage": "1.35"
+      "supply_voltage": "1.35",
+      "price": "15000"
     },
     "ssd": {
       "id": "1",
@@ -41,7 +44,8 @@
       "flash-memory_type": "TLC 3D NAND",
       "interface_max_speed": "600 МБ/с",
       "reading_speed": "550 Мб/сек",
-      "recording_speed": "520 Мб/сек"
+      "recording_speed": "520 Мб/сек",
+      "price": "5000"
     },
     "cooller": {
       "id": "1",
@@ -55,7 +59,8 @@
       "light": "отсутствует",
       "uptime": "50000 ч",
       "weght": "1693 г",
-      "waterblock_material": "медь"
+      "waterblock_material": "медь",
+      "price": "5000"
     },
     "hard_disc": {
       "id": "1",
@@ -63,7 +68,8 @@
       "type": "HDD",
       "memory": "4000Гб",
       "buffered memory": "256 МБ",
-      "conection": "SATA 6Gbit/s"
+      "conection": "SATA 6Gbit/s",
+      "price": "5000"
     },
     "motherboard": {
       "id": "1",
@@ -74,7 +80,8 @@
       "sound": "8-channel (7.1)",
       "socket": "1200",
       "expansion_slots": "PCI-E 4.0 x16, PCI-E 3.0 x16, 3 x PCI-E x1, 2 x PCI-E M.2",
-      "slots_types": "- Key M, 2242/2260/2280/22110 (PCIe 4.0 x4);- Key M, 2242/2260/2280/22110 (PCIe 3.0 x4 & SATA)"
+      "slots_types": "- Key M, 2242/2260/2280/22110 (PCIe 4.0 x4);- Key M, 2242/2260/2280/22110 (PCIe 3.0 x4 & SATA)",
+      "price": "35000"
     },
     "case": {
       "id": "1",
@@ -85,7 +92,8 @@
       "cpu_cooller_maximum_height": "170 мм",
       "gpu_maximum_length": "350 мм",
       "overall_dimensions": "260x535x454 мм",
-      "front_panel_connectors": "USB 3.0 x2, наушники, микрофон"
+      "front_panel_connectors": "USB 3.0 x2, наушники, микрофон",
+      "price": "45000"
     },
     "psu": {
       "id": "1",
@@ -95,7 +103,8 @@
       "protection_technology": "OPP, OVP, OTP, UVP, SCP",
       "cooling_system": "полупассивная",
       "maximum_noise_level": "25 дБа",
-      "pfc": "активный"
+      "pfc": "активный",
+      "price": "25000"
     }
   },
   {
@@ -111,7 +120,8 @@
       "memory-type": "GDDR6X",
       "psu": "1000vt",
       "rgb": "yes",
-      "year": "2020"
+      "year": "2020",
+      "price": "85000"
     },
     "cpu": {
       "id": "2",
@@ -120,7 +130,8 @@
       "socket": "AM4",
       "processor_cores": "12",
       "core_speed": "3700 МГц",
-      "core": "Vermeer"
+      "core": "Vermeer",
+      "price": "35000"
     },
     "ram": {
       "id": "2",
@@ -129,7 +140,8 @@
       "memory_type": "DDR-4",
       "clock_rate": "3600 МГц",
       "throughput": "28800 Мб/с",
-      "supply_voltage": "1.35"
+      "supply_voltage": "1.35",
+      "price": "15000"
     },
     "ssd": {
       "id": "2",
@@ -140,7 +152,8 @@
       "flash-memory_type": "TLC",
       "interface_max_speed": "",
       "reading_speed": "5000 Мб/сек",
-      "recording_speed": "2500 Мб/сек"
+      "recording_speed": "2500 Мб/сек",
+      "price": "5000"
     },
     "cooller": {
       "id": "2",
@@ -153,7 +166,8 @@
       "light": "",
       "uptime": "",
       "weght": "1290 г",
-      "waterblock_material": "медь"
+      "waterblock_material": "медь",
+      "price": "5000"
     },
     "hard_disc": {
       "id": "2",
@@ -161,7 +175,8 @@
       "type": "HDD",
       "memory": "8000 Гб",
       "buffered memory": "256 МБ",
-      "conection": "SATA 6Gbit/s"
+      "conection": "SATA 6Gbit/s",
+      "price": "5000"
     },
     "motherboard": {
       "id": "2",
@@ -172,7 +187,8 @@
       "sound": "8-channel (7.1)",
       "socket": "AM4",
       "expansion_slots": "2 x PCI-E 4.0 x16, 3 x PCI-E x1, PCI-E M.2",
-      "slots_types": "2 x PCI-E 4.0 x16, 3 x PCI-E x1, PCI-E M.2"
+      "slots_types": "2 x PCI-E 4.0 x16, 3 x PCI-E x1, PCI-E M.2",
+      "price": "35000"
     },
     "case": {
       "id": "2",
@@ -183,7 +199,8 @@
       "cpu_cooller_maximum_height": "170 мм",
       "gpu_maximum_length": "380 мм",
       "overall_dimensions": "228x492x475 мм",
-      "front_panel_connectors": "USB x3, включая USB 3.0 x2, наушники, микрофон"
+      "front_panel_connectors": "USB x3, включая USB 3.0 x2, наушники, микрофон",
+      "price": "45000"
     },
     "psu": {
       "id": "2",
@@ -193,7 +210,8 @@
       "protection_technology": "OPP, OVP, OTP, UVP, SCP",
       "cooling_system": "полупассивная",
       "maximum_noise_level": "25 дБа",
-      "pfc": "активный"
+      "pfc": "активный",
+      "price": "25000"
     }
   }
 ]

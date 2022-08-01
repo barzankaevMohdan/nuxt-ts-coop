@@ -26,5 +26,6 @@ export const actions: ActionTree<RootState, RootState> = {
 }
 
 export const getters: GetterTree<RootState, RootState> = {
-  case: (state) => state.psu,
+  psu: (state) => state.psu,
+  psuById:(state) => (id: string | number) => state.psu.find(el => el.id === id)
 }

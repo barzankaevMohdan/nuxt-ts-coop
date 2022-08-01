@@ -7,7 +7,8 @@ export interface Case {
   cpu_cooller_maximum_height: string,
   gpu_maximum_length: string,
   overall_dimensions: string,
-  front_panel_connectors: string
+  front_panel_connectors: string,
+  price: string
 }
 
 export interface Cooller {
@@ -22,7 +23,8 @@ export interface Cooller {
   light: string,
   uptime: string,
   weght: string,
-  waterblock_material: string
+  waterblock_material: string,
+  price: string
 }
 
 export interface Cpu {
@@ -32,7 +34,8 @@ export interface Cpu {
   socket: string,
   processor_cores: string,
   core_speed: string,
-  core: string
+  core: string,
+  price: string
 }
 
 export interface Gpu {
@@ -42,7 +45,8 @@ export interface Gpu {
   memory_type: string,
   psu: string,
   rgb: string,
-  year: string
+  year: string,
+  price: string
 }
 
 export interface HardDisc {
@@ -51,7 +55,8 @@ export interface HardDisc {
   type: string,
   memory: string,
   buffered_memory: string,
-  conection: string
+  conection: string,
+  price: string
 }
 
 export interface MotherBoard {
@@ -63,7 +68,8 @@ export interface MotherBoard {
   sound: string,
   socket: string,
   expansion_slots: string,
-  slots_types: string
+  slots_types: string,
+  price: string
 }
 
 export interface Psu {
@@ -74,7 +80,8 @@ export interface Psu {
   protection_technology: string,
   cooling_system: string,
   maximum_noise_level: string,
-  pfc: string
+  pfc: string,
+  price: string
 }
 
 export interface  Ssd {
@@ -86,7 +93,8 @@ export interface  Ssd {
   flash_memory_type: string,
   interface_max_speed: string,
   reading_speed: string,
-  recording_speed: string
+  recording_speed: string,
+  price: string
 }
 
 export interface Ram {
@@ -96,6 +104,7 @@ export interface Ram {
   memory_type: string,
   clock_rate: string,
   throughput: string,
-  supply_voltage: string
+  supply_voltage: string,
+  price: string
 }
 
