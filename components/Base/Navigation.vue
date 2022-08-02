@@ -4,8 +4,8 @@
     :class="{[`nav_${theme}`]: theme}"
   )
     NavigationLink.nav__link(to='/pc-build' :theme='theme') Конфигуратор Пк
-    NavigationLink.nav__link(:theme='theme') Конфигуратор Пк
-    NavigationLink.nav__link(:theme='theme') Конфигуратор Пк
+    //- NavigationLink.nav__link(:theme='theme') Конфигуратор Пк
+    //- NavigationLink.nav__link(:theme='theme') Конфигуратор Пк
 </template>
 
 <script>
