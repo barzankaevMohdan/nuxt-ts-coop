@@ -36,7 +36,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import vSelect from 'vue-select'
 
@@ -88,7 +88,7 @@ export default Vue.extend({
     vSelect,
   },
   methods: {
-    onSelect(e: Event) {
+    onSelect(e) {
       this.$emit('input', e)
     },
   },

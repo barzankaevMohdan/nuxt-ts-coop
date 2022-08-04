@@ -32,7 +32,7 @@ export const mutations: MutationTree<RootState> = {
   clear(state) {
     state.isLoading = false
     state.user = {} as IUser
-    state.token = null
+    state.token = false
     localStorage.removeItem('token')
   },
   update(state, {token, user}) {
