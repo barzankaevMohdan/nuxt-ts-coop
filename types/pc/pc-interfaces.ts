@@ -107,4 +107,3 @@ export interface Ram {
   supply_voltage: string,
   price: string
 }
-
