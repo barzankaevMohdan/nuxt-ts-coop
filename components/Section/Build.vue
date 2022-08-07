@@ -45,17 +45,26 @@ export default Vue.extend({
   &__description {
     text-align: center;
     --headline-margin-vertical: 25px;
-    --headline-color: var(--gray-3)
+    --headline-color: var(--gray-3);
+
+    @include tablets {
+      --headline-size-h4: var(--main-size);
+    }
   }
 
   &__wrapper {
     background: #1c232e;
     padding: 15px;
-    margin-top: 55px;
+    border-radius: 10px;
+
   }
 
   &__wrapper-content {
     display: flex;
+
+    @include phones {
+      display: none;
+    }
   }
 
   &__wrapper-block {
@@ -87,6 +96,10 @@ export default Vue.extend({
     display: flex;
     justify-content: space-between;
     margin-top: 45px;
+
+    @include phones {
+      flex-direction: column;
+    }
   }
 
   &__text {
@@ -106,6 +119,11 @@ export default Vue.extend({
 
   &__card {
     margin-left: 75px;
+
+    @include phones {
+      margin-top: 35px;
+      margin-left: 0;
+    }
   }
 }
 </style>

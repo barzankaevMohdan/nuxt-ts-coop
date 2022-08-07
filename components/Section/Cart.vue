@@ -11,13 +11,13 @@
       )
         .cart__card
           img.cart__img(src='../../assets/pc/pc.png')
-          UiText(size='large') {{item.name}}
+          UiText.cart__text(size='large') {{item.name}}
         .cart__price-block
           UiText.cart__price(size='big') {{item.price}}
           SvgIcon.cart__svg(name="rub")
         .cart__control
           UiButton(theme='fill-additional') -
-          UiText(size='smallest') {{num}}
+          UiText(size='smallest')
           UiButton(theme='fill-additional') +
           SvgIcon.cart__svg(name="close")
       .cart__worth
@@ -59,6 +59,10 @@ export default Vue.extend({
   &__content {
     display: flex;
     margin-top: 100px;
+
+    @include tablets {
+      flex-direction: column;
+    }
   }
 
   &__title {
@@ -69,6 +73,7 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
     width: 100%;
+
   }
 
   &__left-content {
@@ -80,11 +85,32 @@ export default Vue.extend({
   &__card {
     display: flex;
     align-items: center;
+
+    @include phones {
+      flex-direction: column;
+    }
   }
 
   &__img {
     width: 100px;
     margin-right: 35px;
+
+    @include phones {
+      width: 50px;
+    }
+  }
+
+  &__text {
+    @include phones {
+      --text-size-large: var(--main-small-text);
+      --text-margin-vertical: 15px;
+    }
+  }
+
+  &__price {
+    @include phones {
+      --text-size-big: var(--main-small-text);
+    }
   }
 
   &__price-block {
@@ -92,11 +118,17 @@ export default Vue.extend({
     align-items: center;
   }
 
+
   &__svg {
     width: 25px;
     height: 25px;
     fill: var(--main-light);
     margin-left: 5px;
+
+    @include phones {
+      width: 15px;
+      height: 15px;
+    }
   }
 
   &__control {
@@ -119,6 +151,11 @@ export default Vue.extend({
   &__right {
     width: 40%;
     margin-left: 140px;
+
+    @include tablets {
+      margin-left: 0;
+      margin-top: 45px;
+    }
   }
 
   &__form {
