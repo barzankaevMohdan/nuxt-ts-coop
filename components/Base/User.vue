@@ -85,7 +85,7 @@ export default {
     font-weight: 600;
     font-size: var(--main-text-size);
     line-height: 1.3;
-    color: var(--main-positive-color);
+    color: var(--main-light);
     margin: 0 15px;
   }
 

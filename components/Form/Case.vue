@@ -38,7 +38,7 @@
       placeholder="Высота"
     )
     UiInput.case-form__field(
-      v-model.trim='color'
+      v-model.trim='data.color'
       :error='errors["color"]'
       placeholder="Цвет"
     )

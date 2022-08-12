@@ -5,6 +5,8 @@
     ModalsErrorUserNotFound
     ModalsRegistration
     ModalsLogin
+    ModalsCase
+    ModalsGpu
 </template>
 
 <script lang="ts">

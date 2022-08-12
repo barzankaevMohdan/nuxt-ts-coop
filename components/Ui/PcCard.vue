@@ -83,8 +83,13 @@ export default {
 .card {
   display: flex;
   flex-direction: column;
+  border-radius: 15px;
   padding: 20px 20px;
   background-color: #1c232e;
+  transition: 0.3s;
+  &:hover {
+     transform: scale(1.1);
+  }
 
   &__img {
     width: 200px;
@@ -113,6 +118,9 @@ export default {
 
   &__btn {
     margin-right: 15px;
+    @include phones {
+      padding: 10px;
+    }
   }
 
   &__description {

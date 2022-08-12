@@ -16,7 +16,7 @@ export default Vue.extend({
   name: 'Picker',
   props: {
     tags: {
-      type: String
+      type: Array
     }
   },
   data() {

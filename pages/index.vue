@@ -2,6 +2,7 @@
   LayoutsPageContent
     BaseIntro
     SectionCatalog
+    SectionFooter
 </template>
 
 <script lang="ts">
