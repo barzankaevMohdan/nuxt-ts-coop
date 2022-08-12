@@ -17,31 +17,31 @@
         UiHeadline(tag='h3') Комплектация
         .detail__block
           UiText.detail__components-title(size='big') Видео карта
-          UiText(size='large') {{pc.gpu.name}}
+          UiText.detail__components-name(size='large') {{pc.gpu.name}}
         .detail__block
           UiText.detail__components-title(size='big') Процессор
-          UiText(size='large') {{pc.cpu.name}}
+          UiText.detail__components-name(size='large') {{pc.cpu.name}}
         .detail__block
           UiText.detail__components-title(size='big') Охлаждение
-          UiText(size='large') {{pc.cooller.name}}
+          UiText.detail__components-name(size='large') {{pc.cooller.name}}
         .detail__block
           UiText.detail__components-title(size='big') Оперативная память
-          UiText(size='large') {{pc.ram.name}}
+          UiText.detail__components-name(size='large') {{pc.ram.name}}
         .detail__block
           UiText.detail__components-title(size='big') Материнская плата
-          UiText(size='large') {{pc.motherboard.name}}
+          UiText.detail__components-name(size='large') {{pc.motherboard.name}}
         .detail__block
           UiText.detail__components-title(size='big') Жёсткий диск
-          UiText(size='large') {{pc.hard_disc.name}}
+          UiText.detail__components-name(size='large') {{pc.hard_disc.name}}
         .detail__block
           UiText.detail__components-title(size='big') Диск SSD
-          UiText(size='large') {{pc.ssd.name}}
+          UiText.detail__components-name(size='large') {{pc.ssd.name}}
         .detail__block
           UiText.detail__components-title(size='big') Блок питания
-          UiText(size='large') {{pc.psu.name}}
+          UiText.detail__components-name(size='large') {{pc.psu.name}}
         .detail__block
           UiText.detail__components-title(size='big') Корпус
-          UiText(size='large') {{pc.case.name}}
+          UiText.detail__components-name(size='large') {{pc.case.name}}
 </template>
 
 <script>
@@ -62,6 +62,10 @@ export default {
 
   &__content {
     display: flex;
+
+    @include phones {
+      flex-direction: column;
+    }
   }
 
   &__left {
@@ -106,10 +110,22 @@ export default {
 
   &__right {
     margin-left: auto;
+
+    @include phones {
+      margin: 0 auto;
+    }
   }
 
   &__img {
     width: 500px;
+
+    @include tablets {
+      width: 200px;
+    }
+
+    @include phones {
+      padding-top: 35px;
+    }
   }
 
   &__components {
@@ -126,6 +142,12 @@ export default {
 
   &__components-title {
     --text-color: #8490a4;
+  }
+
+  &__components-name {
+    @include phones {
+      --text-size-large: var(--main-small-text)
+    }
   }
 }
 

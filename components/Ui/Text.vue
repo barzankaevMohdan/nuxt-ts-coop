@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'Text',
+  name: 'UiText',
   props: {
     size: {
       type: String,
@@ -43,7 +43,7 @@ export default {
 <style lang="scss" scoped>
 .text {
   color: var(--text-color);
-  font-size: var(--text-size-medium);
+  font-size: var(--text-size);
   line-height: var(--text-size-line-height);
   border: none;
   padding: var(--text-padding-vertical) var(--text-padding-horizontal);
