@@ -8,7 +8,7 @@
       SvgIcon.card__svg(name="rub")
     .card__action
       UiButton.card__btn Купить
-      UiButton(theme='outline' @click='toDetail(pc.id)' v-if='pc.id') Подробнее
+      UiButton.card__btn(theme='outline' @click='toDetail(pc.id)' v-if='pc.id') Подробнее
     p.card__description {{pc.description}}
     .card__components
       .card__info
@@ -91,8 +91,18 @@ export default {
      transform: scale(1.1);
   }
 
+  @include phones {
+    &:hover {
+     transform: scale(1);
+  }
+  }
+
   &__img {
     width: 200px;
+
+    @include phones {
+      width: 100px;
+  }
 
   }
 
@@ -119,7 +129,8 @@ export default {
   &__btn {
     margin-right: 15px;
     @include phones {
-      padding: 10px;
+      padding: 8px;
+      font-size: var(--main-small-text);
     }
   }
 

@@ -55,7 +55,7 @@ export default {
 .s-faq {
   position: relative;
   padding: var(--main-section-padding);
-  background-color: var(--gray-3);
+  background-color: #151a22;
   overflow: hidden;
   z-index: 0;
   &__bg {

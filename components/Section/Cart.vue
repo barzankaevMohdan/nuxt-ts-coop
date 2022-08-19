@@ -35,11 +35,6 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Cart',
-  data() {
-    return {
-
-    }
-  },
   mounted() {
     this.$store.dispatch('pc/getPc')
   },
@@ -55,6 +50,7 @@ export default Vue.extend({
 @import "~/styles/mixins.scss";
 .cart {
   padding-top: var(--main-section-padding);
+  background-color: #151a22;
 
   &__content {
     display: flex;
