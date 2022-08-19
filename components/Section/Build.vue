@@ -37,6 +37,7 @@ export default Vue.extend({
 @import "~/styles/mixins.scss";
 .pc-build {
   padding-top: var(--main-section-padding);
+  background-color: #151a22;
 
   &__title {
     text-align: center;

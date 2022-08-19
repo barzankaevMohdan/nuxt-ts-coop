@@ -2,8 +2,8 @@
   section.s-admin-create
     LayoutsContainer
       .s-admin-create__form
-        UiButton(@click.prevent="openModal('create-gpu')").s-admin-create__btn добавить видеокарту
-        UiButton(@click.prevent="openModal('create-case')").s-admin-create__btn добавить корпус
+        UiButton.s-admin-create__btn(@click.prevent="openModal('create-gpu')"  theme='fill-additional').s-admin-create__btn добавить видеокарту
+        UiButton.s-admin-create__btn(@click.prevent="openModal('create-case')" theme='fill-additional').s-admin-create__btn добавить корпус
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
 @import "~/styles/mixins.scss";
 .s-admin-create {
   padding: var(--main-section-padding);
-  background-color: var(--dark-2);
+  background-color: #151a22;
   &__form {
     display: flex;
     align-items: center;
