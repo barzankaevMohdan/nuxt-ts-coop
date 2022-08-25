@@ -7,8 +7,7 @@
       UiHeadline.card__subtitle(tag='h4') {{pc.price}}
       SvgIcon.card__svg(name="rub")
     .card__action
-      UiButton.card__btn Купить
-      UiButton.card__btn(theme='outline' @click='toDetail(pc.id)' v-if='pc.id') Подробнее
+      <slot/>
     p.card__description {{pc.description}}
     .card__components
       .card__info
@@ -40,11 +39,6 @@ export default {
       type: Object,
     },
   },
-  methods: {
-    toDetail(id) {
-      this.$router.push(`/detail/${id}`)
-    }
-  },
   computed: {
     gpuName() {
       return this.pc.gpu?.name
@@ -71,7 +65,7 @@ export default {
       return this.pc.psu?.name
     },
     casename() {
-      return this.pc.case?.name
+      return this.pc.casePc?.name
     }
   }
 }

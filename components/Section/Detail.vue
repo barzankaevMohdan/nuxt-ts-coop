@@ -7,7 +7,7 @@
           UiHeadline(tag='h2') {{pc.name}}
           p.detail__description {{pc.description}}
           .detail__action
-            UiButton Купить
+            UiButton(@click='buyPc(pc.id)') Купить
             .detail__wrapper
             span.detail__price {{pc.price}}
             SvgIcon.detail__svg(name="rub")
@@ -52,6 +52,15 @@ export default {
       return this.$store.getters['pc/id'](this.$route.params.id)
     }
   },
+  methods: {
+    buyPc(id) {
+      const data = {
+        pc: this.$store.getters['pc/id'](id),
+        amount: 1
+      }
+      this.$store.commit('pc/addBuyPc', data)
+    },
+  }
 }
 </script>
 

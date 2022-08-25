@@ -8,6 +8,8 @@
           :key='idx'
           :pc='item'
           )
+          UiButton.catalog__btn(@click='buyPc(item.id)') Купить
+          UiButton.catalog__btn(theme='outline' @click='toDetail(item.id)') Подробнее
 </template>
 
 <script lang="ts">
@@ -24,6 +26,18 @@ export default Vue.extend({
       return this.$store.getters['pc/pc']
     }
   },
+  methods: {
+     buyPc(id: number) {
+      const data = {
+        pc: this.$store.getters['pc/id'](id),
+        amount: 1
+      }
+      this.$store.commit('pc/addBuyPc', data)
+    },
+    toDetail(id: number) {
+      this.$router.push(`/detail/${id}`)
+    }
+  }
 })
 </script>
 
@@ -49,6 +63,14 @@ export default Vue.extend({
       display: flex;
       flex-direction: column;
     }
+  }
+
+  &__btn {
+    margin-right: 15px;
+      @include phones {
+        padding: 8px;
+        font-size: var(--main-small-text);
+      }
   }
 }
 </style>

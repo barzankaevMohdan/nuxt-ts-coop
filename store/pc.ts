@@ -24,7 +24,8 @@ export type RootState = ReturnType<typeof state>
 
 export const state = () => ({
   pc: [] as Pc[],
-  buildPc: {}
+  buildPc: {},
+  buyPc: [] as any
 })
 
 export const mutations: MutationTree<RootState> = {
@@ -33,6 +34,32 @@ export const mutations: MutationTree<RootState> = {
   },
   addBuildPc(state, data) {
     state.buildPc = data
+  },
+  addBuyPc(state, data) {
+    if(state.buyPc.length) {
+      let productEx = false
+      state.buyPc.map((el: { pc: { id: any }; amount: number }) => {
+        if(el.pc.id === data.pc.id) {
+          productEx = true
+          el.amount++
+        }
+      })
+      if(!productEx){
+        state.buyPc.push(data)
+       }
+    }
+    else {
+      state.buyPc.push(data)
+    }
+  },
+  increment(state, index) {
+    state.buyPc[index].amount++
+  },
+  discrement(state, index) {
+    state.buyPc[index].amount--
+  },
+  deletePc(state, id) {
+    state.buyPc = state.buyPc.filter((el: { pc: any }) => el.pc.id !== id)
   }
 }
 
@@ -50,5 +77,6 @@ export const actions: ActionTree<RootState, RootState> = {
 export const getters: GetterTree<RootState, RootState> = {
   pc: (state) => state.pc,
   newPc: (state) => state.buildPc,
-  id: (state) => (id: string|number) => state.pc.find(el => el.id === id)
+  id: (state) => (id: string|number) => state.pc.find(el => el.id === id),
+  buyPc: (state) => state.buyPc
 }
