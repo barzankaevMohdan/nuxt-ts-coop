@@ -18,6 +18,11 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Catalog',
+  data(){
+    return{
+      title: 'Товар добавлен в корзину'
+    }
+  },
   mounted() {
     this.$store.dispatch('pc/getPc')
   },
@@ -33,6 +38,7 @@ export default Vue.extend({
         amount: 1
       }
       this.$store.commit('pc/addBuyPc', data)
+      this.$vfm.show('succes', this.title)
     },
     toDetail(id: number) {
       this.$router.push(`/detail/${id}`)

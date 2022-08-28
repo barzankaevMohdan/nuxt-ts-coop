@@ -233,5 +233,4 @@ export default Vue.extend({
     margin-top: 55px;
   }
 }
-
 </style>

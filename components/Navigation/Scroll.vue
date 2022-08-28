@@ -18,6 +18,7 @@ export default {
       if(el) {
         setTimeout(() => {el.scrollIntoView({behavior: 'smooth'})}, 0)
       }
+      this.$emit('scroll')
     }
   }
 }

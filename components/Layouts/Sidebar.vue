@@ -3,10 +3,15 @@
     .sidebar__content
      .sidebar__burger
       UiBurger(:showMenu='sidebar' @click="$emit('close')")
-     BaseNavigation(theme='sidebar')
+     .sidebar-content__item
+        NavigationLink(to='/pc-build' @click="$emit('close')") Конфигуратор Пк
+     .sidebar-content__item
+       NavigationLink(to='/admin-create' @click="$emit('close')") Панель Админа
+     .sidebar-content__item
+       NavigationScroll(scrollTo='faq' @scroll="$emit('close')") FAQ
      template(v-if='isAuth')
       UiButton(@click.prevent='showLogin' theme='fill-additional') выйти
-      SvgIcon.sidebar__basket(name="basket")
+      SvgIcon.sidebar__basket(name="basket" @click='toCart')
 
      template(v-else)
       UiButton(@click.prevent='showLogin' theme='fill-additional') Войти
@@ -27,6 +32,10 @@ export default Vue.extend({
     showLogin():void {
       this.$vfm.show('user-login')
     },
+    toCart() {
+      this.$router.push('/cart')
+      this.$emit('close')
+    }
   },
   computed: {
     isAuth():Boolean {
@@ -45,6 +54,24 @@ export default Vue.extend({
   align-items: center;
   min-height: 100vh;
   padding: 50px 0;
+
+  &__item {
+    position: relative;
+    margin-bottom: 40px;
+    &:first-child {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -15px;
+        width: 6px;
+        height: 6px;
+        border-radius: 100%;
+        background: var(--main-danger-color);
+      }
+    }
+  }
 }
 .sidebar__basket {
   max-width: 36px;
