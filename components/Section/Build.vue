@@ -28,7 +28,11 @@ export default Vue.extend({
   name: 'Build',
   data(){
     return{
-      title: 'Товар добавлен в корзину'
+      data:{
+        title: 'Товар добавлен в корзину',
+        discription: 'Перейти в корзину',
+        route: '/cart'
+      }
     }
   },
   computed: {
@@ -45,7 +49,7 @@ export default Vue.extend({
       console.log(this.pc);
 
         this.$store.commit('buildPc/addPcCart', data)
-        this.$vfm.show('succes', this.title)
+        this.$vfm.show('succes', this.data)
     }
   }
 })

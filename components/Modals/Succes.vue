@@ -5,7 +5,7 @@
     )
       template(v-slot:title) {{title}}
       template(v-slot:footer)
-        UiButton(@click='toCart' theme='fill-additional') Перейти в корзину
+        UiButton(@click='toCart' theme='fill-additional') {{discription}}
 </template>
 
 <script lang="ts">
@@ -15,15 +15,19 @@ export default Vue.extend({
   name: 'Succes',
   data() {
     return {
-      title: ''
+      title: '',
+      discription: '',
+      route: ''
     }
   },
   methods: {
     initData(event: any) {
-      this.title = event.ref.params
+      this.title = event.ref.params.title
+      this.discription = event.ref.params.discription
+      this.route = event.ref.params.route
     },
     toCart() {
-      this.$router.push('/cart')
+      this.$router.push(this.route)
       this.$vfm.hide('succes')
     }
   }

@@ -20,7 +20,11 @@ export default Vue.extend({
   name: 'Catalog',
   data(){
     return{
-      title: 'Товар добавлен в корзину'
+      data:{
+        title: 'Товар добавлен в корзину',
+        discription: 'Перейти в корзину',
+        route: '/cart'
+      }
     }
   },
   mounted() {
@@ -34,11 +38,11 @@ export default Vue.extend({
   methods: {
      buyPc(id: number) {
       const data = {
-        pc: this.$store.getters['pc/id'](id),
+        pc: this.$store.getters['pc/build'](id),
         amount: 1
       }
       this.$store.commit('pc/addBuyPc', data)
-      this.$vfm.show('succes', this.title)
+      this.$vfm.show('succes', this.data)
     },
     toDetail(id: number) {
       this.$router.push(`/detail/${id}`)
@@ -74,8 +78,9 @@ export default Vue.extend({
   &__btn {
     margin-right: 15px;
       @include phones {
-        padding: 8px;
-        font-size: var(--main-small-text);
+        --button-padding-vertical: 8px;
+        --button-padding-horizontal: 8px;
+        --button-font-size: var(--main-small-text);
       }
   }
 }

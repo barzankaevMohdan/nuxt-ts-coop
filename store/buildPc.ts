@@ -25,11 +25,19 @@ export const mutations: MutationTree<RootState> = {
       state.buildPcCart.push(data)
     }
   },
-  buildIncrement(state, index) {
-    state.buildPcCart[index].amount++
+  buildIncrement(state, id) {
+    state.buildPcCart.forEach((el: { pc: { id: any }; amount: number }) => {
+      if(el.pc.id === id) {
+        el.amount++
+      }
+    });
   },
-  buildDiscrement(state, index) {
-    state.buildPcCart[index].amount--
+  buildDiscrement(state, id) {
+    state.buildPcCart.forEach((el: { pc: { id: any }; amount: number }) => {
+      if(el.pc.id === id) {
+        el.amount--
+      }
+    });
   },
   buildDeletePc(state, id) {
     state.buildPcCart = state.buildPcCart.filter((el: { pc: any }) => el.pc.id !== id)

@@ -3,12 +3,7 @@
     .sidebar__content
      .sidebar__burger
       UiBurger(:showMenu='sidebar' @click="$emit('close')")
-     .sidebar-content__item
-        NavigationLink(to='/pc-build' @click="$emit('close')") Конфигуратор Пк
-     .sidebar-content__item
-       NavigationLink(to='/admin-create' @click="$emit('close')") Панель Админа
-     .sidebar-content__item
-       NavigationScroll(scrollTo='faq' @scroll="$emit('close')") FAQ
+     BaseNavigation(theme='sidebar'  @click="$emit('close')")
      template(v-if='isAuth')
       UiButton(@click.prevent='showLogin' theme='fill-additional') выйти
       SvgIcon.sidebar__basket(name="basket" @click='toCart')

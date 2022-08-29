@@ -49,13 +49,13 @@ export default {
   name: 'Detail',
   computed: {
     pc() {
-      return this.$store.getters['pc/id'](this.$route.params.id)
+      return this.$store.getters['pc/build'](this.$route.params.id)
     }
   },
   methods: {
     buyPc(id) {
       const data = {
-        pc: this.$store.getters['pc/id'](id),
+        pc: this.$store.getters['pc/build'](id),
         amount: 1
       }
       this.$store.commit('pc/addBuyPc', data)

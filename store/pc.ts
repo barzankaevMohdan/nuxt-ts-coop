@@ -52,11 +52,19 @@ export const mutations: MutationTree<RootState> = {
       state.buyPc.push(data)
     }
   },
-  increment(state, index) {
-    state.buyPc[index].amount++
+  increment(state, id) {
+    state.buyPc.forEach((el: { pc: { id: any }; amount: number }) => {
+      if(el.pc.id === id) {
+        el.amount++
+      }
+    });
   },
-  discrement(state, index) {
-    state.buyPc[index].amount--
+  discrement(state, id) {
+    state.buyPc.forEach((el: { pc: { id: any }; amount: number }) => {
+      if(el.pc.id === id) {
+        el.amount--
+      }
+    });
   },
   deletePc(state, id) {
     state.buyPc = state.buyPc.filter((el: { pc: any }) => el.pc.id !== id)
@@ -77,6 +85,6 @@ export const actions: ActionTree<RootState, RootState> = {
 export const getters: GetterTree<RootState, RootState> = {
   pc: (state) => state.pc,
   newPc: (state) => state.buildPc,
-  id: (state) => (id: string|number) => state.pc.find(el => el.id === id),
+  build: (state) => (id: string|number) => state.pc.find(el => el.id === id),
   buyPc: (state) => state.buyPc
 }

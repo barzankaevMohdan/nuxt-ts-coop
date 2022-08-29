@@ -3,9 +3,9 @@
     class='nav'
     :class="{[`nav_${theme}`]: theme}"
   )
-    NavigationLink.nav__link(to='/pc-build' :theme='theme' @click="$emit('close')") Конфигуратор Пк
-    NavigationLink.nav__link(to='/admin-create' :theme='theme' @click="$emit('close')") Панель Админа
-    NavigationScroll.nav__link(scrollTo='faq' :theme='theme' @click="$emit('close')") FAQ
+    NavigationLink.nav__link(to='/pc-build' :theme='theme' @click="close") Конфигуратор Пк
+    NavigationLink.nav__link(to='/admin-create' :theme='theme' @click="close") Панель Админа
+    NavigationScroll.nav__link(scrollTo='faq' :theme='theme' @click="close") FAQ
 </template>
 
 <script>
@@ -14,6 +14,11 @@ export default {
   props: {
     theme: String
   },
+  methods: {
+    close() {
+      this.$emit('click')
+    }
+  }
 }
 </script>
 

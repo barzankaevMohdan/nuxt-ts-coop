@@ -15,9 +15,9 @@
           UiText.cart__price(size='big') {{item.pc.price}}
           SvgIcon.cart__svg(name="rub")
         .cart__control
-          UiButton(theme='fill-additional' @click='discrement(idx)') -
+          UiButton(theme='fill-additional' @click='discrement(item.pc.id)') -
           UiText(size='smallest') {{item.amount}}
-          UiButton(theme='fill-additional' @click='increment(idx)') +
+          UiButton(theme='fill-additional' @click='increment(item.pc.id)') +
           SvgIcon.cart__svg(name="close" @click='deletePc(item.pc.id)')
 
       .cart__left-content(
@@ -31,9 +31,9 @@
           UiText.cart__price(size='big') {{item.pc.price}}
           SvgIcon.cart__svg(name="rub")
         .cart__control
-          UiButton(theme='fill-additional' @click='buildDiscrement(idx)') -
+          UiButton(theme='fill-additional' @click='buildDiscrement(item.pc.id)') -
           UiText(size='smallest') {{item.amount}}
-          UiButton(theme='fill-additional' @click='buildIncrement(idx)') +
+          UiButton(theme='fill-additional' @click='buildIncrement(item.pc.id)') +
           SvgIcon.cart__svg(name="close" @click='buildDeletePc(item.pc.id)')
       .cart__worth(v-if='pc.length || buildPc.length')
         UiText(size='large') Общая Стоимость
