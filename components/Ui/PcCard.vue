@@ -85,7 +85,7 @@ export default {
      transform: scale(1.1);
   }
 
-  @include phones {
+  @include tablets {
     &:hover {
      transform: scale(1);
   }
