@@ -5,7 +5,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import {IUserData} from '~/store/user'
 
 export default Vue.extend({
   name: 'LoginForm',

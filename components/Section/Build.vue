@@ -17,7 +17,8 @@
           UiText(size='big') Собрать ПК - игровой, домашний, офисный, для работы с графикой. Гибкая модификация ПК.
     .pc-build__block
       FormPc
-      UiPcCard.pc-build__card( :pc='pc')
+      UiPcCard.pc-build__card(:pc='pc')
+        UiButton.catalog__btn(@click='buyPc' :disabled='!pc.id') Купить
 </template>
 
 <script lang="ts">
@@ -25,11 +26,32 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Build',
+  data(){
+    return{
+      data:{
+        title: 'Товар добавлен в корзину',
+        discription: 'Перейти в корзину',
+        route: '/cart'
+      }
+    }
+  },
   computed: {
     pc() {
       return this.$store.getters['pc/newPc']
     }
   },
+  methods: {
+    buyPc() {
+      const data = {
+        pc: this.$store.getters['pc/newPc'],
+        amount: 1
+      }
+      console.log(this.pc);
+
+        this.$store.commit('buildPc/addPcCart', data)
+        this.$vfm.show('succes', this.data)
+    }
+  }
 })
 </script>
 

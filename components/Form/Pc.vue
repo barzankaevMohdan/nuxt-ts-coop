@@ -149,9 +149,9 @@ export default Vue.extend({
       deep: true,
       handler(newValue, oldValue) {
 
-
-
        const data = {
+        name: 'New Pc',
+        id: Math.random(),
         cpu: this.$store.getters['cpu/cpuById'](newValue.cpu?.value),
         cooller: this.$store.getters['cooller/coollerById'](newValue.cooller?.value),
         motherboard: this.$store.getters['motherboard/motherBoardById'](newValue.motherBoard?.value),
@@ -163,7 +163,6 @@ export default Vue.extend({
         psu: this.$store.getters['psu/psuById'](newValue.psu?.value),
         price: 0
        }
-
         let price = 0
 
         Object.values(data).forEach(item => {
@@ -173,7 +172,6 @@ export default Vue.extend({
         data.price = price
 
         this.$store.commit('pc/addBuildPc', data)
-
       }
    }
   },

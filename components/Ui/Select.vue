@@ -128,6 +128,7 @@ export default Vue.extend({
 </style>
 
 <style lang="scss" scoped>
+ @import "~/styles/mixins.scss";
 .select {
   &__label {
     display: block;
