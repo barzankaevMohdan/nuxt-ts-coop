@@ -4,28 +4,45 @@
    UiHeadline.cart__title(tag='h2') Корзина
    .cart__content
     .cart__left
-      UiHeadline.cart__subtitle(tag='h4') Корзина
       .cart__left-content(
-        v-for='item in pc'
+        v-for='(item, idx) in pc'
         :key='item.id'
       )
         .cart__card
           img.cart__img(src='../../assets/pc/pc.png')
-          UiText.cart__text(size='large') {{item.name}}
+          UiText.cart__text(size='large') {{item.pc.name}}
         .cart__price-block
-          UiText.cart__price(size='big') {{item.price}}
+          UiText.cart__price(size='big') {{item.pc.price}}
           SvgIcon.cart__svg(name="rub")
         .cart__control
-          UiButton(theme='fill-additional') -
-          UiText(size='smallest')
-          UiButton(theme='fill-additional') +
-          SvgIcon.cart__svg(name="close")
-      .cart__worth
+          UiButton(theme='fill-additional' @click='discrement(item.pc.id)') -
+          UiText(size='smallest') {{item.amount}}
+          UiButton(theme='fill-additional' @click='increment(item.pc.id)') +
+          SvgIcon.cart__svg(name="close" @click='deletePc(item.pc.id)')
+
+      .cart__left-content(
+        v-for='(item, idx) in buildPc'
+        :key='item.id'
+      )
+        .cart__card
+          img.cart__img(src='../../assets/pc/pc.png')
+          UiText.cart__text(size='large') {{item.pc.name}}
+        .cart__price-block
+          UiText.cart__price(size='big') {{item.pc.price}}
+          SvgIcon.cart__svg(name="rub")
+        .cart__control
+          UiButton(theme='fill-additional' @click='buildDiscrement(item.pc.id)') -
+          UiText(size='smallest') {{item.amount}}
+          UiButton(theme='fill-additional' @click='buildIncrement(item.pc.id)') +
+          SvgIcon.cart__svg(name="close" @click='buildDeletePc(item.pc.id)')
+      .cart__worth(v-if='pc.length || buildPc.length')
         UiText(size='large') Общая Стоимость
         .cart__worth-block
-          UiText.cart__price(size='big') 900000
+          UiText.cart__price(size='big') {{total + totalBuild}}
           SvgIcon.cart__svg(name="rub")
-    .cart__right
+      template(v-else)
+        UiText.cart__worth-text(size='large') Корзина пуста
+    .cart__right(v-if='pc.length || buildPc.length')
       UiText(size='big') Оформление заказа
       FormCart.cart__form
 </template>
@@ -35,14 +52,68 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Cart',
-  mounted() {
-    this.$store.dispatch('pc/getPc')
-  },
   computed: {
     pc() {
-      return this.$store.getters['pc/pc']
+      return this.$store.getters['pc/buyPc']
     },
+    buildPc() {
+      return this.$store.getters['buildPc/newPc']
+    },
+    total(){
+      let arr = []
+      let res = 0
+
+      if(this.pc.length){
+        for(let item of this.pc){
+          arr.push(item.pc.price * item.amount)
+        }
+        res = arr.reduce((sum,el) => {
+          return sum+el
+        })
+        return Math.floor(res)
+      }else{
+        return 0
+      }
+   },
+   totalBuild(){
+      let arr = []
+      let res = 0
+
+      if(this.buildPc.length){
+        for(let item of this.buildPc){
+          arr.push(item.pc.price * item.amount)
+        }
+        res = arr.reduce((sum,el) => {
+          return sum+el
+        })
+        return Math.floor(res)
+      }else{
+        return 0
+      }
+   }
   },
+  methods: {
+    deletePc(id: number) {
+      this.$store.commit('pc/deletePc', id)
+
+    },
+    increment(idx: number) {
+      this.$store.commit('pc/increment', idx)
+    },
+    discrement(idx: number) {
+      this.$store.commit('pc/discrement', idx)
+
+    },
+    buildDeletePc(id: number) {
+      this.$store.commit('buildPc/buildDeletePc', id)
+    },
+    buildIncrement(idx: number) {
+      this.$store.commit('buildPc/buildIncrement', idx)
+    },
+    buildDiscrement(idx: number) {
+      this.$store.commit('buildPc/buildDiscrement', idx)
+    }
+  }
 })
 </script>
 
@@ -144,6 +215,10 @@ export default Vue.extend({
     margin-left: 25px;
   }
 
+  &__worth-text {
+    text-align: center;
+  }
+
   &__right {
     width: 40%;
     margin-left: 140px;
@@ -158,5 +233,4 @@ export default Vue.extend({
     margin-top: 55px;
   }
 }
-
 </style>

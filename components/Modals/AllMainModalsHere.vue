@@ -7,6 +7,7 @@
     ModalsLogin
     ModalsCase
     ModalsGpu
+    ModalsSucces
 </template>
 
 <script lang="ts">
